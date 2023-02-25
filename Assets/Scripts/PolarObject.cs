@@ -47,7 +47,7 @@ public class PolarObject : MonoBehaviour
         {
             dir = theta;
         }
-        prefab.transform.rotate(Vector3.forward, theta - oldtheta);
+        prefab.transform.Rotate(Vector3.forward, theta - oldtheta);
         prefab.transform.position = new Vector2(x, y);
 
 
