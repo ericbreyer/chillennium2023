@@ -19,6 +19,9 @@ public class PolarObject : MonoBehaviour
     private float rScale = 5.0f;
 
     public bool dirFlex;
+
+    public float maxHealth;
+    private float health;
    
     
 
@@ -98,6 +101,21 @@ public class PolarObject : MonoBehaviour
         this.transform.Rotate(Vector3.forward, -90);
         height = 1f;
         width = 1f;
+        this.health = this.maxHealth;
+    }
+
+    public void takeDamage(float dmg)
+    {
+        this.health -= dmg;
+        if(this.health <= 0)
+        {
+            killChildren();
+            Destroy(this);
+        }
+    }
+    protected virtual void killChildren()
+    {
+
     }
 
     private void Update()
