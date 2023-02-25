@@ -9,6 +9,7 @@ public class Tower : PolarObject
     public TileHolder left;
     public TileHolder right;
     public int lr;
+    public int JANK_GAME_JAM_CONSTANT_DONT_CHANGE_COST;
     
 
     public void attachB(TileHolder basis)

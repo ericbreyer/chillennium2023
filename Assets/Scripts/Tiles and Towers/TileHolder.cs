@@ -8,7 +8,7 @@ public class TileHolder : PolarObject, IClickHandler
     public Tower tower;
     public int numtowers;
     public ParticleSystem ps;
-    public ProductiveTower productive;
+    //public ProductiveTower productive;
     public bool empty;
     public SpriteRenderer sprite;
 
@@ -26,9 +26,9 @@ public class TileHolder : PolarObject, IClickHandler
         Vector3 scale = this.transform.localScale;
         ps = gameObject.GetComponent<ParticleSystem>();
         ps.Stop();
-        productive = Resources.Load<ProductiveTower>("Prefabs/ProductivityTower");
+        //productive = Resources.Load<ProductiveTower>("Prefabs/ProductivityTower");
 
-        productive.transform.localScale = scale;
+        //productive.transform.localScale = scale;
         empty = true;
         sprite = GetComponent<SpriteRenderer>();
        
@@ -43,7 +43,7 @@ public class TileHolder : PolarObject, IClickHandler
     {
         if (empty)
         {
-            tower = Instantiate(productive);
+            //tower = Instantiate(productive);
             tower.setPosPol(r, theta);
             Debug.Log(theta);
             

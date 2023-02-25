@@ -46,6 +46,8 @@ public class GameController : MonoBehaviour
         placeUIMan = FindObjectOfType<PlacementUIManager>();
         placeUIMan.gameObject.SetActive(false);
 
+        FindObjectOfType<AudioManager>().PlayMusic(0);
+
 
         //Initializing enemy prefab list stuff
         //TO-DO when we make enemy prefabs
@@ -78,9 +80,6 @@ public class GameController : MonoBehaviour
                 gameStarted = true;
                 //Initializing planet
                 this.planet = Instantiate(ppf);
-
-
-                Instantiate(Resources.Load<ArtichokeManager>("Prefabs/ArtichokeManager"));
                 
                 placeUIMan.gameObject.SetActive(true);
 
@@ -107,6 +106,13 @@ public class GameController : MonoBehaviour
         else
         {
             this.difficulty = diffIncPerSec * (Time.time - this.gameStartTime);
+        }
+
+        if (this.difficulty > .5f) {
+            FindObjectOfType<AudioManager>().PlayMusic(1);
+        }
+        else {
+            FindObjectOfType<AudioManager>().PlayMusic(0);
         }
     }
 
