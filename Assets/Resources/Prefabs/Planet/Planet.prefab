@@ -137,5 +137,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   radius: 0.5
-  numPlots: 20
+  numPlots: 16
   maxHealth: 1
