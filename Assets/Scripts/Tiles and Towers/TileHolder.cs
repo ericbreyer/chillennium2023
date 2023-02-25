@@ -26,7 +26,7 @@ public class TileHolder : PolarObject, IClickHandler
     void Start() 
     {
         ps = gameObject.GetComponent<ParticleSystem>();
-        ps.Stop();
+        gameObject.GetComponent<ParticleSystem>().Stop();
         empty = true;
         sprite = GetComponent<SpriteRenderer>();
         puim = FindObjectOfType<PlacementUIManager>();
@@ -49,11 +49,13 @@ public class TileHolder : PolarObject, IClickHandler
             tower.transform.Rotate(new Vector3(0, 0, -90));
 
             tower.setPosPol(r, theta);
-            Debug.Log(theta);
+            //Debug.Log(theta);
             
             attach(tower);
+            gameObject.GetComponent<ParticleSystem>().Stop();
             empty = false;
             sprite.enabled = false;
+            
         }
         
 
@@ -61,12 +63,12 @@ public class TileHolder : PolarObject, IClickHandler
 
     public void DoHoverEnter()
     {
-        if(empty) ps.Play();
+        if(empty) gameObject.GetComponent<ParticleSystem>().Play();
     }
 
     public void DoHoverLeave()
     {
-        ps.Stop();
+       if(empty) gameObject.GetComponent<ParticleSystem>().Stop();
     }
 
 

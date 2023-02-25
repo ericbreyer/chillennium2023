@@ -11,6 +11,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: TileHolder
       objectReference: {fileID: 0}
+    - target: {fileID: 5464589976339254782, guid: 920c9cfa13b4b724c9eea0d423ccfa1a, type: 3}
+      propertyPath: m_TagString
+      value: Shit
+      objectReference: {fileID: 0}
     - target: {fileID: 7886864426255495989, guid: 920c9cfa13b4b724c9eea0d423ccfa1a, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -95,7 +99,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
+    oldSize: {x: 2.52, y: 2.52}
     newSize: {x: 5.12, y: 5.12}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -4852,7 +4856,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: d94a4ca3bf2bcc74aa0046823ee39420, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 07211617769240542b71dc07b0cc8211, type: 3}
   m_Color: {r: 0.6981132, g: 0.2828734, b: 0.023050921, a: 0.38431373}
   m_FlipX: 0
   m_FlipY: 0
@@ -4972,9 +4976,10 @@ MonoBehaviour:
   dirConst: 0
   dirDynam: 0
   dirFlex: 0
+  maxHealth: 0
   tower: {fileID: 0}
   numtowers: 0
   ps: {fileID: 0}
-  productive: {fileID: 0}
   empty: 0
   sprite: {fileID: 0}
+  height: 0
