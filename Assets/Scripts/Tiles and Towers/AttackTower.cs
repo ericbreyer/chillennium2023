@@ -7,7 +7,7 @@ public class AttackTower : Tower
     protected float lastAttackTime;
     protected CircleCollider2D cc;
     public float attackRate;
-    public GameObject attackPrefab;
+    protected GameObject attackPrefab;
     public float range;
     public float damage;
     public LayerMask lm;
@@ -22,6 +22,7 @@ public class AttackTower : Tower
         cc.isTrigger = true;
         cf = new ContactFilter2D();
         cf.SetLayerMask(lm);
+        this.attackPrefab = Resources.Load<GameObject>("Prefabs/Missile");
     }
 
     // Update is called once per frame

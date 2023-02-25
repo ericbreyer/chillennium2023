@@ -254,6 +254,10 @@ PrefabInstance:
       propertyPath: m_LocalScale.y
       value: 100
       objectReference: {fileID: 0}
+    - target: {fileID: 1999095543964598993, guid: 4d958c7aa01d8074889528a00a6e536e, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 4507518566761195470, guid: 4d958c7aa01d8074889528a00a6e536e, type: 3}
       propertyPath: m_Sprite
       value: 
@@ -644,10 +648,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startingWarmth: 0
-  startingDifficulty: 0
+  startingDifficulty: 1
   diffIncPerSec: 0.1
   warmthIncPerSec: 0
-  numEnemyPrefabs: 0
+  numEnemyPrefabs: 1
 --- !u!1001 &1672576534
 PrefabInstance:
   m_ObjectHideFlags: 0

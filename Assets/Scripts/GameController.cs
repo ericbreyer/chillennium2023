@@ -52,13 +52,15 @@ public class GameController : MonoBehaviour
         //Initializing enemy prefab list stuff
         //TO-DO when we make enemy prefabs
 
-        //enemyList[0] = Resources.Load<Enemy>("Enemies/x");
+        enemyList[0] = Resources.Load<Enemy>("Prefabs/Enemies/BasicEnemy");
 
         float chanceAccum = 0; //associating value rand needs to hit to spawn this enemy
         for(int i = 0; i<numEnemyPrefabs; i++)
         {
-            this.chanceVals[i] = chanceAccum;
             chanceAccum += enemyList[i].spawnChance;
+            this.chanceVals[i] = chanceAccum;
+            
+            Debug.Log("Chanceaccum:" + chanceAccum);
         }
         //if for some reason our chances add up to over 1, this will "normalize"
         for(int i = 0; i<numEnemyPrefabs; i++)
@@ -76,7 +78,6 @@ public class GameController : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.Space))
             {
-                Debug.Log("We got here");  
                 gameStarted = true;
                 //Initializing planet
                 this.planet = Instantiate(ppf);
@@ -125,10 +126,14 @@ public class GameController : MonoBehaviour
             float chance = Random.value;
             for(int i = 0; i < numEnemyPrefabs; i++)
             {
+                Debug.Log("Current chance: " + chanceVals[i]);
                 if(chanceVals[i] > chance)
                 {
                     Enemy newEnemy = Instantiate(enemyList[i]);
                     newEnemy.setPosPol(1f, Random.Range(0, 360));
+                    newEnemy.transform.Rotate(new Vector3(0, 0, 0));
+                    float sca = planet.radius / planet.numPlots * 3;
+                    newEnemy.transform.localScale = newEnemy.transform.localScale * sca;
                     break;
                 }
             }
