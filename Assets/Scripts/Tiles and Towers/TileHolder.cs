@@ -12,7 +12,7 @@ public class TileHolder : PolarObject, IClickHandler
     public bool empty;
     public SpriteRenderer sprite;
     private PlacementUIManager puim;
-    public int height;
+    //public int height;
 
     public void attach(Tower offspring)
     {
