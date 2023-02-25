@@ -32,7 +32,7 @@ public class Planet : MonoBehaviour
         plotList = new TileHolder[numPlots];
         for (int i = 0; i<numPlots; i++)
         {
-            float theta = i*plotSize;
+            float theta = 360/numPlots * i;
             this.plotList[i] = Instantiate(th);
             this.plotList[i].setPosPol(radius, theta);
         }
