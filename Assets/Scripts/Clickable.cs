@@ -7,12 +7,15 @@ public class Clickable : MonoBehaviour
 
 
     private IClickHandler callback;
-    public GameObject hoverIndicator;
+    public GameObject hoverIndicator = null;
     // Start is called before the first frame update
     void Start()
     {
-        if(!TryGetComponent<IClickHandler>(out callback)) {
+        if(!TryGetComponent(out callback)) {
             callback = new DummyClick();
+        }
+        if(hoverIndicator == null) {
+            hoverIndicator = new GameObject();
         }
         hoverIndicator.SetActive(false);
     }

@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using Unity.VisualScripting.Dependencies.Sqlite;
 using UnityEngine;
 
@@ -10,42 +11,62 @@ public class FarmTower : Tower, IClickHandler
     [SerializeField] private int rate;
     [SerializeField] private Sprite growingSprite;
     [SerializeField] private Sprite grownSprite;
-    [SerializeField] private int cost = 10;
+    [SerializeField] private GameObject hi;
 
-    private bool grown = false;
+    private enum GrowStste {
+        dead,
+        growing,
+        grown
+    }
+    private GrowStste grown = GrowStste.dead;
 
     // Start is called before the first frame update
     void Start()
     {
         bank = GameObject.FindObjectOfType<ArtichokeManager>();
         sr = gameObject.GetComponent<SpriteRenderer>();
-        JANK_GAME_JAM_CONSTANT_DONT_CHANGE_COST = cost;
+        hi.SetActive(false);
     }
 
     private void Update() {
-        if (grown) {
+        if (grown == GrowStste.grown) {
             sr.sprite = grownSprite;
         }
         else { sr.sprite = growingSprite;}
-    }
 
-    // Update is called once per frame
-    void FixedUpdate()
-    {
-        if(!grown) {
-            Util.SetTimeout(() => { this.grown = true; }, 7000, this);
+        if (grown == GrowStste.dead) {
+            grown = GrowStste.growing;
+            Util.SetTimeout(() => { this.grown = GrowStste.grown; }, 7000, this);
         }
     }
 
     public void DoClick() {
+        if (grown == GrowStste.grown) {
+            grown = GrowStste.dead;
+            bank.AddChokes(10);
+            hi.SetActive(false);
+        }
         return;
     }
 
     public void DoHoverEnter() {
+        if (grown == GrowStste.grown) {
+            hi.SetActive(true);
+        }
         return;
     }
 
     public void DoHoverLeave() {
+        hi.SetActive(false);
         return;
+    }
+
+    private void OnMouseOver() {
+        if (grown == GrowStste.grown) {
+            hi.SetActive(true);
+        }
+        else {
+            hi.SetActive(false);
+        } 
     }
 }

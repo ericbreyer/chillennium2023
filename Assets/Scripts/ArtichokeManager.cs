@@ -16,7 +16,7 @@ public class ArtichokeManager : MonoBehaviour
 
     private static GameObject instance = null;
 
-    private Int32 chokes = 0;
+    private Int32 chokes = 50;
     //useable in editor
     public TMP_Text chokesUI;
 
