@@ -5,7 +5,7 @@ using UnityEngine;
 public class Enemy : Entity
 {
     // Start is called before the first frame update
-    public float spawnRate;
+    public float spawnChance;
 
     void Start()
     {

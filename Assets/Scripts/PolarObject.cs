@@ -14,7 +14,6 @@ public class PolarObject : MonoBehaviour
     public bool dirEq;
     public bool dirConst;
     public bool dirDynam;
-    public GameObject prefab;
     
 
     public Vector2 getRect() 
@@ -47,8 +46,8 @@ public class PolarObject : MonoBehaviour
         {
             dir = theta;
         }
-        prefab.transform.Rotate(Vector3.forward, theta - oldtheta);
-        prefab.transform.position = new Vector2(x, y);
+        this.transform.Rotate(Vector3.forward, theta - oldtheta);
+        this.transform.position = new Vector2(x, y);
 
 
         return true;
@@ -60,7 +59,7 @@ public class PolarObject : MonoBehaviour
         theta = newTheta;
         x = r * Mathf.Cos(theta);
         y = r * Mathf.Sin(theta);
-        prefab.transform.position = new Vector2(x, y);
+        this.transform.position = new Vector2(x, y);
         if(dirDynam)
         {
             dir = dirdif + theta;
@@ -69,7 +68,7 @@ public class PolarObject : MonoBehaviour
         {
             dir = theta;
         }
-        prefab.transform.eulerAngles = Vector3.forward * dir;
+        this.transform.eulerAngles = Vector3.forward * dir;
         return true;
     }
 
