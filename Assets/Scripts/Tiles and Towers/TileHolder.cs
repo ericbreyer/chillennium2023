@@ -19,6 +19,7 @@ public class TileHolder : PolarObject, IClickHandler
         tower = offspring;
         
         offspring.attachB(this);
+
         offspring.createHolders();
 
     }
@@ -30,6 +31,8 @@ public class TileHolder : PolarObject, IClickHandler
         empty = true;
         sprite = GetComponent<SpriteRenderer>();
         puim = FindObjectOfType<PlacementUIManager>();
+        Debug.Log(GetComponent<BoxCollider2D>().bounds.ToString());
+
     }
 
     void Update() 
@@ -51,6 +54,8 @@ public class TileHolder : PolarObject, IClickHandler
             tower.setPosPol(r, theta);
             //Debug.Log(theta);
             
+
+
             attach(tower);
             gameObject.GetComponent<ParticleSystem>().Stop();
             empty = false;
