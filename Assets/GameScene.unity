@@ -153,7 +153,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4f231c4fb786f3946a6b90b886c48677, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_SendPointerHoverToParent: 1
   m_HorizontalAxis: Horizontal
   m_VerticalAxis: Vertical
   m_SubmitButton: Submit
@@ -644,10 +643,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startingWarmth: 0
-  startingDifficulty: 0
+  startingDifficulty: 1
   diffIncPerSec: 0.1
   warmthIncPerSec: 0
-  numEnemyPrefabs: 0
+  numEnemyPrefabs: 1
 --- !u!1001 &1672576534
 PrefabInstance:
   m_ObjectHideFlags: 0
