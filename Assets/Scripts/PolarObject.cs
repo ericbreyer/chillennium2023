@@ -16,6 +16,8 @@ public class PolarObject : MonoBehaviour
     public bool dirEq;
     public bool dirConst;
     public bool dirDynam;
+    private float rScale = 5.0f;
+
     public bool dirFlex;
    
     
@@ -41,7 +43,7 @@ public class PolarObject : MonoBehaviour
         x = newX;
         y = newY;
         theta = Mathf.Atan2(x,  y);
-        r = Mathf.Sqrt(Mathf.Pow(x, 2) + Mathf.Pow(y, 2));
+        r = Mathf.Sqrt(Mathf.Pow(x, 2) + Mathf.Pow(y, 2)) / rScale;
         if(dirDynam)
         {
             dir = dirdif + theta;
@@ -50,7 +52,7 @@ public class PolarObject : MonoBehaviour
         {
             dir = theta;
         }
-        this.transform.Rotate(Vector3.forward, theta - oldtheta);
+        this.transform.Rotate(Vector3.forward, Mathf.Rad2Deg * (theta - oldtheta));
         this.transform.position = new Vector2(x, y);
 
 
@@ -63,6 +65,10 @@ public class PolarObject : MonoBehaviour
         theta = newTheta;
         this.transform.position = new Vector2(0, 0);
         if (dirDynam)
+        x = r * rScale * Mathf.Cos(theta);
+        y = r * rScale * Mathf.Sin(theta);
+        this.transform.position = new Vector2(x, y);
+        if(dirDynam)
         {
             dir = dirdif + theta;
         }
@@ -82,6 +88,7 @@ public class PolarObject : MonoBehaviour
         
         
 
+        this.transform.eulerAngles = new Vector3(0f,0f,Mathf.Rad2Deg * dir - 90f);
         return true;
     }
 
