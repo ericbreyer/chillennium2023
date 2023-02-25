@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.PlasticSCM.Editor.WebApi;
 using Unity.VisualScripting;
 using UnityEngine;
 
@@ -8,9 +9,9 @@ public class TileHolder : PolarObject, IClickHandler
     public Tower tower;
     public int numtowers;
     public ParticleSystem ps;
-    public FarmTower productive;
     public bool empty;
     public SpriteRenderer sprite;
+    private PlacementUIManager puim;
 
     public void attach(Tower offspring)
     {
@@ -23,15 +24,11 @@ public class TileHolder : PolarObject, IClickHandler
 
     void Start() 
     {
-        Vector3 scale = this.transform.localScale;
         ps = gameObject.GetComponent<ParticleSystem>();
         ps.Stop();
-        productive = Resources.Load<FarmTower>("Prefabs/ProductivityTower");
-
-        productive.transform.localScale = scale;
         empty = true;
         sprite = GetComponent<SpriteRenderer>();
-       
+        puim = FindObjectOfType<PlacementUIManager>();
     }
 
     void Update() 
@@ -41,9 +38,15 @@ public class TileHolder : PolarObject, IClickHandler
 
     public void DoClick()
     {
-        if (empty)
+        var sel = puim.getSelectedTower();
+        if (empty && sel != null)
         {
-            tower = Instantiate(productive);
+            puim.TowerPlaced();
+            var obj = Instantiate(sel);
+            tower = obj.GetComponent<Tower>();
+            tower.transform.localScale = this.transform.localScale;
+            tower.transform.Rotate(new Vector3(0, 0, -90));
+
             tower.setPosPol(r, theta);
             Debug.Log(theta);
             
