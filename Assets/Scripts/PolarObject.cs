@@ -88,7 +88,7 @@ public class PolarObject : MonoBehaviour
         
         
 
-        this.transform.eulerAngles = new Vector3(0f,0f,Mathf.Rad2Deg * dir - 90f);
+       // this.transform.eulerAngles = new Vector3(0f,0f,Mathf.Rad2Deg * dir - 90f);
         return true;
     }
 
