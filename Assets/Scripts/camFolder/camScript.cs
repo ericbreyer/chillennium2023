@@ -22,13 +22,11 @@ public class camScript : MonoBehaviour
     {
         if (Input.GetKey(KeyCode.LeftArrow))
         {
-            Debug.Log("we got here");
             this.transform.Rotate(new Vector3(0, 0, 360f * Time.deltaTime));
         }
 
         if (Input.GetKey(KeyCode.RightArrow))
         {
-            Debug.Log("We got here");
             this.transform.Rotate(new Vector3(0, 0, -360f * Time.deltaTime));
         }
     }

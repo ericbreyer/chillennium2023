@@ -23,27 +23,33 @@ public class GameController : MonoBehaviour
     private float lastSpawnTime;
     private Enemy[] enemyList;
     private float[] chanceVals;
+    private bool gameStarted = false;
+
+    //UI manager object
+    private PlacementUIManager placeUIMan;
 
     //Planet
     private Planet planet;
     //Prefab
     private Planet ppf;
 
+    
+
     // Start is called before the first frame update
     void Start()
     {
         this.warmth = this.startingWarmth;
         this.difficulty = this.startingDifficulty;
-        this.gameStartTime = Time.time;
-        this.lastSpawnTime = this.gameStartTime;
         this.enemyList = new Enemy[numEnemyPrefabs];
         this.chanceVals = new float[numEnemyPrefabs];
         this.ppf = Resources.Load<Planet>("Prefabs/Planet/Planet");
+        placeUIMan = FindObjectOfType<PlacementUIManager>();
+        placeUIMan.gameObject.SetActive(false);
 
 
         //Initializing enemy prefab list stuff
         //TO-DO when we make enemy prefabs
-        
+
         //enemyList[0] = Resources.Load<Enemy>("Enemies/x");
 
         float chanceAccum = 0; //associating value rand needs to hit to spawn this enemy
@@ -58,16 +64,38 @@ public class GameController : MonoBehaviour
             this.chanceVals[i] /= chanceAccum;
         }
 
-        //Initializing planet
-        this.planet = Instantiate(ppf);
+        
     }
 
     // Update is called once per frame
-    void fixedUpdate()
+    void Update()
     {
-        difficultyHandler();
-        spawnHandler();
-        warmthHandler();
+        if(gameStarted == false)
+        {
+            if (Input.GetKeyDown(KeyCode.Space))
+            {
+                Debug.Log("We got here");  
+                gameStarted = true;
+                //Initializing planet
+                this.planet = Instantiate(ppf);
+
+
+                Instantiate(Resources.Load<ArtichokeManager>("Prefabs/ArtichokeManager"));
+                
+                placeUIMan.gameObject.SetActive(true);
+
+                //Initializing game time values
+                this.gameStartTime = Time.time;
+                this.lastSpawnTime = this.gameStartTime;
+            }
+        }
+        else
+        {
+            difficultyHandler();
+            spawnHandler();
+            warmthHandler();
+        }
+        
     }
 
     void difficultyHandler()
