@@ -25,7 +25,7 @@ public class Planet : MonoBehaviour
         this.transform.localScale = new Vector3(radius*2, radius*2, 1);
 
         
-        float plotSize = (2 * Mathf.PI * radius) / numPlots;
+        float plotSize = (2 * Mathf.PI * radius) / (numPlots * 3/2);
 
         //initializing list of tileholders
         th = Resources.Load<TileHolder>("Prefabs/Planet/TileHolder");

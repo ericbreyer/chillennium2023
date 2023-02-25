@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 
 public class camScript : MonoBehaviour
@@ -11,7 +12,7 @@ public class camScript : MonoBehaviour
     void Start()
     {
 
-        this.transform.eulerAngles = new Vector3(
+        this.transform.parent.eulerAngles = new Vector3(
                                         this.transform.eulerAngles.x,
                                         this.transform.eulerAngles.y,
                                         0);
@@ -22,12 +23,34 @@ public class camScript : MonoBehaviour
     {
         if (Input.GetKey(KeyCode.LeftArrow))
         {
-            this.transform.Rotate(new Vector3(0, 0, 360f * Time.deltaTime));
+            this.transform.parent.Rotate(new Vector3(0, 0, 360f * Time.deltaTime));
         }
 
         if (Input.GetKey(KeyCode.RightArrow))
         {
-            this.transform.Rotate(new Vector3(0, 0, -360f * Time.deltaTime));
+            transform.parent.Rotate(new Vector3(0, 0, -360f * Time.deltaTime));
+        }
+        if(Input.GetKey(KeyCode.UpArrow))
+        {
+            float y = transform.localPosition[1];
+            if(zoom < 2)
+            {
+                zoom = zoom + Time.deltaTime;
+                transform.localPosition = new Vector3(0, y + Time.deltaTime * 0.5f, -2);
+                Camera thing = gameObject.GetComponent<Camera>();
+                thing.orthographicSize = 1 / zoom;
+            }
+        }
+        if(Input.GetKey(KeyCode.DownArrow))
+        {
+            float y = transform.localPosition[1];
+            if(zoom > 1)
+            {
+                zoom = zoom - Time.deltaTime;
+                transform.localPosition = new Vector3(0, y - Time.deltaTime * 0.5f, -2);
+                Camera thing = gameObject.GetComponent<Camera>();
+                thing.orthographicSize = 1 / zoom;
+            }
         }
     }
 }
