@@ -14,11 +14,22 @@ public class Tower : PolarObject
     public void attachB(TileHolder basis)
     {
         home = basis;
-        this.setPosxy(basis.x, basis.y);
+        setPosxy(basis.x, basis.y + 0.3f);
+        
+
     }
 
     void Start()
     {
+        
+    }
+
+    public void createHolders()
+    {
+        left = Resources.Load<TileHolder>("Prefabs/Planet/TileHolder");
+        left = Instantiate(left);
+        right = Instantiate(left);
+        left.setPosPol(r + height, theta);
     }
 
     void Update()

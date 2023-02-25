@@ -13,6 +13,7 @@ public class ProductiveTower : Tower
         bank = GameObject.FindObjectOfType<ArtichokeManager>();
         rate = 1;
 
+
     }
 
     // Update is called once per frame

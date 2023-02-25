@@ -15,11 +15,13 @@ public class Clickable : MonoBehaviour
             callback = new DummyClick();
         }
         hoverIndicator.SetActive(false);
+        Debug.Log("we got here");
     }
 
     // Update is called once per frame
     private void OnMouseEnter() {
         hoverIndicator.SetActive(true);
+        Debug.Log("why though");
         callback.DoHoverEnter();
     }
     private void OnMouseExit() {

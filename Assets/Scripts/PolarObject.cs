@@ -10,10 +10,13 @@ public class PolarObject : MonoBehaviour
     public float theta; //theta
     public float r; //how high up
     public float dir;
+    public float width;
+    public float height;
     public float dirdif;
     public bool dirEq;
     public bool dirConst;
     public bool dirDynam;
+   
     
 
     public Vector2 getRect() 
@@ -70,6 +73,25 @@ public class PolarObject : MonoBehaviour
         }
         this.transform.eulerAngles = Vector3.forward * dir;
         return true;
+    }
+
+    private void Start()
+    {
+        x = this.transform.position.x;
+        y = this.transform.position.y;
+        theta = Mathf.Atan2(x, y);
+        r = Mathf.Sqrt(Mathf.Pow(x, 2) + Mathf.Pow(y, 2));
+        this.transform.Rotate(Vector3.forward, dir-90);
+        height = 0.5f;
+        width = 0.5f;
+    }
+
+    private void Update()
+    {
+        x = this.transform.position.x;
+        y = this.transform.position.y;
+        theta = Mathf.Atan2(x, y);
+        r = Mathf.Sqrt(Mathf.Pow(x, 2) + Mathf.Pow(y, 2));
     }
 
 }
