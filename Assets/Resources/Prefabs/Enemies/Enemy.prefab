@@ -79,12 +79,35 @@ MonoBehaviour:
   theta: 0
   r: 0
   dir: 0
+  width: 0
+  height: 0
   dirdif: 0
   dirEq: 0
   dirConst: 0
   dirDynam: 0
-  prefab: {fileID: 0}
-  health: 0
-  damage: 0
-  speed: 0
-  spawnRate: 0
+  dirFlex: 0
+  maxHealth: 1
+  attackRate: 0.2
+  damage: 0.2
+  speed: 0.2
+  range: 0.1
+  lm:
+    serializedVersion: 2
+    m_Bits: 320
+  spawnChance: 0.2
+--- !u!58 &-3830621763478387790
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8038700853056275399}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.5

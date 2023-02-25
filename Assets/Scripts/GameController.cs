@@ -131,7 +131,7 @@ public class GameController : MonoBehaviour
                 {
                     Enemy newEnemy = Instantiate(enemyList[i]);
                     newEnemy.setPosPol(1f, Random.Range(0, 360));
-                    newEnemy.transform.Rotate(new Vector3(0, 0, -90));
+                    newEnemy.transform.Rotate(new Vector3(0, 0, 0));
                     float sca = planet.radius / planet.numPlots * 3;
                     newEnemy.transform.localScale = newEnemy.transform.localScale * sca;
                     break;
