@@ -34,6 +34,31 @@ public class Tower : PolarObject
         right.dirFlex = true;
         left.transform.localScale = scale;
         right.transform.localScale = scale;
+
+        GameObject[] toCheck = GameObject.FindGameObjectsWithTag("Shit");
+        int countr = 0;
+        int countl = 0;
+        Collider2D rightColl = right.GetComponent<Collider2D>();
+        Collider2D leftColl = left.GetComponent<Collider2D>();
+        for(int i = 0; i < toCheck.Length; i++)
+        {
+            Collider2D other = toCheck[i].GetComponent<Collider2D>();
+            if(rightColl.bounds.Intersects(other.bounds))
+            {
+                countr++;
+            }
+            if(leftColl.bounds.Intersects(other.bounds))
+            {
+                countl++;
+            }
+        }
+
+        if (countr > 1) Destroy(right);
+        if (countl > 1) Destroy(left);
+        
+
+
+
     }
 
     void Update()
