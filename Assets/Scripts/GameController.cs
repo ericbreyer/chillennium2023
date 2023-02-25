@@ -43,7 +43,8 @@ public class GameController : MonoBehaviour
 
         //Initializing enemy prefab list stuff
         //TO-DO when we make enemy prefabs
-        //enemyList[0] = Resources.Load<Enemy>("Enemies/x");
+        
+        enemyList[0] = Resources.Load<Enemy>("Enemies/x");
 
         float chanceAccum = 0; //associating value rand needs to hit to spawn this enemy
         for(int i = 0; i<numEnemyPrefabs; i++)
