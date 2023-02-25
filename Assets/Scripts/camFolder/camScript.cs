@@ -21,16 +21,16 @@ public class camScript : MonoBehaviour
     // Update is called once per frame  
     void Update()
     {
-        if (Input.GetKey(KeyCode.LeftArrow))
+        if (Input.GetKey(KeyCode.LeftArrow)|| Input.GetKey(KeyCode.A))
         {
             this.transform.parent.Rotate(new Vector3(0, 0, 360f * Time.deltaTime));
         }
 
-        if (Input.GetKey(KeyCode.RightArrow))
+        if (Input.GetKey(KeyCode.RightArrow) || Input.GetKey(KeyCode.D))
         {
             transform.parent.Rotate(new Vector3(0, 0, -360f * Time.deltaTime));
         }
-        if(Input.GetKey(KeyCode.UpArrow))
+        if(Input.GetKey(KeyCode.UpArrow) || Input.GetKey(KeyCode.W))
         {
             float y = transform.localPosition[1];
             if(zoom < 2)
@@ -41,7 +41,7 @@ public class camScript : MonoBehaviour
                 thing.orthographicSize = 1 / zoom;
             }
         }
-        if(Input.GetKey(KeyCode.DownArrow))
+        if(Input.GetKey(KeyCode.DownArrow) || Input.GetKey(KeyCode.S))
         {
             float y = transform.localPosition[1];
             if(zoom > 1)
