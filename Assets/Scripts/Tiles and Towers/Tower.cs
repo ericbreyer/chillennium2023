@@ -8,6 +8,7 @@ public class Tower : PolarObject
     public TileHolder home;
     public TileHolder left;
     public TileHolder right;
+    public int depth = 0;
     public int lr;
     public int JANK_GAME_JAM_CONSTANT_DONT_CHANGE_COST;
     
@@ -56,9 +57,20 @@ public class Tower : PolarObject
         if (countr > 1) Destroy(right);
         if (countl > 1) Destroy(left);
         
+    }
 
 
-
+    public override void killChildren() 
+    {
+        if(left.tower != null)
+        {
+            left.tower.killChildren();
+        }
+        if(right.tower != null)
+        {
+            right.tower.killChildren();
+        }
+        Destroy(this);
     }
 
     void Update()

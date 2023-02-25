@@ -11,6 +11,7 @@ public class TileHolder : PolarObject, IClickHandler
     public FarmTower productive;
     public bool empty;
     public SpriteRenderer sprite;
+    public int height;
 
     public void attach(Tower offspring)
     {

@@ -113,7 +113,7 @@ public class PolarObject : MonoBehaviour
             Destroy(this);
         }
     }
-    protected virtual void killChildren()
+    public virtual void killChildren()
     {
 
     }
