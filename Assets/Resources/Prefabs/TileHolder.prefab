@@ -9,7 +9,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 5464589976339254782, guid: 920c9cfa13b4b724c9eea0d423ccfa1a, type: 3}
       propertyPath: m_Name
-      value: PolarObject
+      value: TileHolder
       objectReference: {fileID: 0}
     - target: {fileID: 7886864426255495989, guid: 920c9cfa13b4b724c9eea0d423ccfa1a, type: 3}
       propertyPath: m_RootOrder
@@ -57,3 +57,32 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 920c9cfa13b4b724c9eea0d423ccfa1a, type: 3}
+--- !u!1 &1915898333016331430 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5464589976339254782, guid: 920c9cfa13b4b724c9eea0d423ccfa1a, type: 3}
+  m_PrefabInstance: {fileID: 5854887063231338840}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &9155410304033616503
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1915898333016331430}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ba6e135346d4211438ef6a174905f7e6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  x: 0
+  y: 0
+  theta: 0
+  r: 0
+  dir: 0
+  dirdif: 0
+  dirEq: 0
+  dirConst: 0
+  dirDynam: 0
+  prefab: {fileID: 0}
+  tower: {fileID: 0}
+  numtowers: 0

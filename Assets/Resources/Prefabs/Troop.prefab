@@ -53,7 +53,24 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8882196609845656025, guid: 58d0ce65f33f9754ba8009080e0ff6ae, type: 3}
       propertyPath: m_Name
-      value: Entity
+      value: Troop
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 58d0ce65f33f9754ba8009080e0ff6ae, type: 3}
+--- !u!1 &6497782250011645221 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8882196609845656025, guid: 58d0ce65f33f9754ba8009080e0ff6ae, type: 3}
+  m_PrefabInstance: {fileID: 2409184209484590332}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &-506285252866019127
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6497782250011645221}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8c3bd50b2d678b0468ff425d2d2c5593, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

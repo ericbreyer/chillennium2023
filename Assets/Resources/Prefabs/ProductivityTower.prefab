@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1001 &8372390005750573199
+--- !u!1001 &5876863775643202268
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -53,7 +53,36 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7521566123437776834, guid: fc36542a4ffcec54e838c85bcd55dced, type: 3}
       propertyPath: m_Name
-      value: Tower
+      value: ProductivityTower
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fc36542a4ffcec54e838c85bcd55dced, type: 3}
+--- !u!1 &4174600452099026206 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7521566123437776834, guid: fc36542a4ffcec54e838c85bcd55dced, type: 3}
+  m_PrefabInstance: {fileID: 5876863775643202268}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &8434767593759214961
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4174600452099026206}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01ddc4c7b3e055d4ca2c88652d31692d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  x: 0
+  y: 0
+  theta: 0
+  r: 0
+  dir: 0
+  dirdif: 0
+  dirEq: 0
+  dirConst: 0
+  dirDynam: 0
+  prefab: {fileID: 0}
+  bank: {fileID: 0}
+  rate: 0
