@@ -26,6 +26,8 @@ public class GameController : MonoBehaviour
 
     //Planet
     private Planet planet;
+    //Prefab
+    private Planet ppf;
 
     // Start is called before the first frame update
     void Start()
@@ -33,8 +35,10 @@ public class GameController : MonoBehaviour
         this.warmth = this.startingWarmth;
         this.difficulty = this.startingDifficulty;
         this.gameStartTime = Time.time;
+        this.lastSpawnTime = this.gameStartTime;
         this.enemyList = new Enemy[numEnemyPrefabs];
         this.chanceVals = new float[numEnemyPrefabs];
+        this.ppf = Resources.Load<Planet>("Prefabs/Planet/Planet");
 
 
         //Initializing enemy prefab list stuff
@@ -54,7 +58,7 @@ public class GameController : MonoBehaviour
         }
 
         //Initializing planet
-        this.planet = Instantiate(Resources.Load<Planet>("Planet/Planet"));
+        this.planet = Instantiate(ppf);
     }
 
     // Update is called once per frame

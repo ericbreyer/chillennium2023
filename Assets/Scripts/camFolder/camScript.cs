@@ -15,14 +15,15 @@ public class camScript : MonoBehaviour
     }
 
     // Update is called once per frame  
-    void fixedUpdate()
+    void update()
     {
         if (Input.GetKey(KeyCode.LeftArrow))
         {
+            Debug.Log("we got here");
             this.transform.eulerAngles = new Vector3(
                                         this.transform.eulerAngles.x,
                                         this.transform.eulerAngles.y,
-                                        this.transform.eulerAngles.z + this.transform.eulerAngles.z * Time.fixedDeltaTime);
+                                        this.transform.eulerAngles.z + this.transform.eulerAngles.z * Time.deltaTime);
         }
 
         if (Input.GetKey(KeyCode.RightArrow))
@@ -30,7 +31,7 @@ public class camScript : MonoBehaviour
             this.transform.eulerAngles = new Vector3(
                                         this.transform.eulerAngles.x,
                                         this.transform.eulerAngles.y,
-                                        this.transform.eulerAngles.z + this.transform.eulerAngles.z * Time.fixedDeltaTime);
+                                        this.transform.eulerAngles.z + this.transform.eulerAngles.z * Time.deltaTime);
         }
     }
 }
