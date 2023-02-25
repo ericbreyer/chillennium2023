@@ -16,6 +16,7 @@ public class PolarObject : MonoBehaviour
     public bool dirEq;
     public bool dirConst;
     public bool dirDynam;
+    public bool dirFlex;
    
     
 
@@ -60,38 +61,44 @@ public class PolarObject : MonoBehaviour
     {
         r = newR;
         theta = newTheta;
-        x = r * Mathf.Cos(theta);
-        y = r * Mathf.Sin(theta);
-        this.transform.position = new Vector2(x, y);
-        if(dirDynam)
+        this.transform.position = new Vector2(0, 0);
+        if (dirDynam)
         {
             dir = dirdif + theta;
         }
-        else 
+        else if (!dirFlex)
         {
+
+            float angle = (theta - dir);
+            this.transform.Rotate(Vector3.forward, angle);
             dir = theta;
         }
-        this.transform.eulerAngles = Vector3.forward * dir;
+
+        x = r * Mathf.Cos(theta * Mathf.PI / 180);
+        y = r * Mathf.Sin(theta * Mathf.PI / 180);
+        
+        this.transform.position = new Vector2(x, y);
+        
+        
+        
+
         return true;
     }
 
     private void Start()
     {
-        x = this.transform.position.x;
-        y = this.transform.position.y;
-        theta = Mathf.Atan2(x, y);
-        r = Mathf.Sqrt(Mathf.Pow(x, 2) + Mathf.Pow(y, 2));
-        this.transform.Rotate(Vector3.forward, dir-90);
-        height = 0.5f;
-        width = 0.5f;
+        
+        this.transform.Rotate(Vector3.forward, -90);
+        height = 1f;
+        width = 1f;
     }
 
     private void Update()
     {
-        x = this.transform.position.x;
-        y = this.transform.position.y;
-        theta = Mathf.Atan2(x, y);
-        r = Mathf.Sqrt(Mathf.Pow(x, 2) + Mathf.Pow(y, 2));
+        //x = this.transform.position.x;
+        //y = this.transform.position.y;
+        //theta = Mathf.Atan2(x, y);
+        //r = Mathf.Sqrt(Mathf.Pow(x, 2) + Mathf.Pow(y, 2));
     }
 
 }

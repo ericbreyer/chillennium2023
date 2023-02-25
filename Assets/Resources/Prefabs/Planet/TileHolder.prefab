@@ -17,15 +17,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7886864426255495989, guid: 920c9cfa13b4b724c9eea0d423ccfa1a, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.2
+      value: 0.3
       objectReference: {fileID: 0}
     - target: {fileID: 7886864426255495989, guid: 920c9cfa13b4b724c9eea0d423ccfa1a, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.2
+      value: 0.3
       objectReference: {fileID: 0}
     - target: {fileID: 7886864426255495989, guid: 920c9cfa13b4b724c9eea0d423ccfa1a, type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.2
+      value: 0.3
       objectReference: {fileID: 0}
     - target: {fileID: 7886864426255495989, guid: 920c9cfa13b4b724c9eea0d423ccfa1a, type: 3}
       propertyPath: m_LocalPosition.x
@@ -78,7 +78,7 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 5464589976339254782, guid: 920c9cfa13b4b724c9eea0d423ccfa1a, type: 3}
   m_PrefabInstance: {fileID: 5854887063231338840}
   m_PrefabAsset: {fileID: 0}
---- !u!61 &5926744702038249336
+--- !u!61 &2251209015336745343
 BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -95,14 +95,14 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 5.12, y: 5.12}
+    oldSize: {x: 1, y: 1}
     newSize: {x: 5.12, y: 5.12}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 5.12, y: 5.12}
+  m_Size: {x: 0.7, y: 0.7}
   m_EdgeRadius: 0
 --- !u!198 &7764518229992176888
 ParticleSystem:
@@ -4965,10 +4965,16 @@ MonoBehaviour:
   theta: 0
   r: 0
   dir: 0
+  width: 0
+  height: 0
   dirdif: 0
   dirEq: 0
   dirConst: 0
   dirDynam: 0
+  dirFlex: 0
   tower: {fileID: 0}
   numtowers: 0
   ps: {fileID: 0}
+  productive: {fileID: 0}
+  empty: 0
+  sprite: {fileID: 0}

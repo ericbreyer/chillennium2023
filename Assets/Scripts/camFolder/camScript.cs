@@ -5,6 +5,9 @@ using UnityEngine;
 public class camScript : MonoBehaviour
 {
     // Start is called before the first frame update
+
+    public float zoom = 1f;
+    
     void Start()
     {
 

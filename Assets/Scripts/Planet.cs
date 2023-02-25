@@ -35,6 +35,7 @@ public class Planet : MonoBehaviour
             float theta = 360/numPlots * i;
             this.plotList[i] = Instantiate(th);
             this.plotList[i].setPosPol(radius, theta);
+            this.plotList[i].transform.localScale = new Vector3(plotSize, plotSize, 0);
         }
     }
 

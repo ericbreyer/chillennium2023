@@ -14,9 +14,6 @@ public class Tower : PolarObject
     public void attachB(TileHolder basis)
     {
         home = basis;
-        setPosxy(basis.x, basis.y + 0.3f);
-        
-
     }
 
     void Start()
@@ -26,10 +23,16 @@ public class Tower : PolarObject
 
     public void createHolders()
     {
+        Vector3 scale = this.transform.localScale; 
         left = Resources.Load<TileHolder>("Prefabs/Planet/TileHolder");
         left = Instantiate(left);
         right = Instantiate(left);
-        left.setPosPol(r + height, theta);
+        left.setPosPol(r + transform.localScale[1] / 2, (theta + 5));
+        left.dirFlex = true;
+        right.setPosPol(r + transform.localScale[1] / 2, (theta - 5));
+        right.dirFlex = true;
+        left.transform.localScale = scale;
+        right.transform.localScale = scale;
     }
 
     void Update()
