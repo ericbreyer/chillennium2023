@@ -19,7 +19,6 @@ public class FarmTower : Tower, IClickHandler
     {
         bank = GameObject.FindObjectOfType<ArtichokeManager>();
         sr = gameObject.GetComponent<SpriteRenderer>();
-        rate = 10;
         JANK_GAME_JAM_CONSTANT_DONT_CHANGE_COST = cost;
     }
 
@@ -34,7 +33,7 @@ public class FarmTower : Tower, IClickHandler
     void FixedUpdate()
     {
         if(!grown) {
-            Util.SetTimeout(() => { this.grown = true; }, 2000, this);
+            Util.SetTimeout(() => { this.grown = true; }, 7000, this);
         }
     }
 

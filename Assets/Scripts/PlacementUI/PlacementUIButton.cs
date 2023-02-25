@@ -20,5 +20,6 @@ public class PlacementUIButton : MonoBehaviour
 
     public void SetSelectedTile() {
         puim.setSelectedTower(tile);
+        Debug.Log("PRESSED");
     }
 }

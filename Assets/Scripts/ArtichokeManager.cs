@@ -43,6 +43,5 @@ public class ArtichokeManager : MonoBehaviour
     }
     public void Update() {
         chokesUI.text = chokes.ToString();
-        this.AddChokes(1);
     }
 }
