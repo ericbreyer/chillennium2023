@@ -8,37 +8,45 @@ public class FarmTower : Tower, IClickHandler
     private ArtichokeManager bank;
     private SpriteRenderer sr;
     [SerializeField] private int rate;
-    [SerializeField] private Sprite growing;
-    [SerializeField] private Sprite grown;
+    [SerializeField] private Sprite growingSprite;
+    [SerializeField] private Sprite grownSprite;
     [SerializeField] private int cost = 10;
+
+    private bool grown = false;
 
     // Start is called before the first frame update
     void Start()
     {
         bank = GameObject.FindObjectOfType<ArtichokeManager>();
         sr = gameObject.GetComponent<SpriteRenderer>();
-        rate = 1;
+        rate = 10;
         JANK_GAME_JAM_CONSTANT_DONT_CHANGE_COST = cost;
+    }
+
+    private void Update() {
+        if (grown) {
+            sr.sprite = grownSprite;
+        }
+        else { sr.sprite = growingSprite;}
     }
 
     // Update is called once per frame
     void FixedUpdate()
     {
-        if(Time.frameCount % rate == 0) {
-
+        if(!grown) {
+            Util.SetTimeout(() => { this.grown = true; }, 2000, this);
         }
-        bank.AddChokes(rate);
     }
 
     public void DoClick() {
-        throw new System.NotImplementedException();
+        return;
     }
 
     public void DoHoverEnter() {
-        throw new System.NotImplementedException();
+        return;
     }
 
     public void DoHoverLeave() {
-        throw new System.NotImplementedException();
+        return;
     }
 }
