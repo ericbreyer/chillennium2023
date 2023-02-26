@@ -32,7 +32,6 @@ public class MissileTower : AttackTower
 
             Planet planet = FindObjectOfType<Planet>();
             Missile miss = Instantiate(missile).GetComponent<Missile>();
-            //miss.transform.Rotate(Vector3.forward, theta - miss.theta + 180);
             miss.transform.localScale = new Vector3(0.1f, 0.1f, 0.1f);
 
             var bruah = this.transform.up;
@@ -40,8 +39,13 @@ public class MissileTower : AttackTower
             miss.transform.position = this.transform.position + bruah;
             miss.cringe = true;
             miss.setTarget(closestEnem.gameObject);
-            miss.maxFlyTime = 2;
-            miss.flySpeed = .2f;
+            if (miss.target == null) miss.transform.Rotate(Vector3.forward, theta);
+            else
+            {
+                miss.transform.Rotate(Vector3.forward, miss.target.GetComponent<PolarObject>().theta - miss.theta + 90);
+            }
+            miss.maxFlyTime = 1;
+            miss.flySpeed = .5f;
             lastAttackTime = Time.time;
             miss.setLM(this.lm);
             miss.setDamage(10);

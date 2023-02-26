@@ -36,7 +36,7 @@ public class BasicEnemy : Enemy
         bool hit = false;
             Planet planet = FindObjectOfType<Planet>();
             Missile miss = Instantiate(this.missile);
-            miss.transform.Rotate(Vector3.forward, theta - miss.theta + 180);
+            miss.transform.Rotate(Vector3.forward, theta - miss.theta + 270);
             miss.transform.position = this.transform.position;
             miss.transform.localScale = new Vector3(0.1f, 0.1f, 0.1f);
             lastAttackTime = Time.time;

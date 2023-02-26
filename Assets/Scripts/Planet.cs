@@ -10,7 +10,7 @@ public class Planet : PolarObject
     public float radius;
     public int numPlots;
     public new float maxHealth;
-    private float health;
+    public float health;
 
     //tileholder prefab
     private TileHolder th;

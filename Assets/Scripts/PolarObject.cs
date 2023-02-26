@@ -115,7 +115,7 @@ public class PolarObject : MonoBehaviour
     }
     public virtual void killChildren()
     {
-
+        Destroy(this.gameObject);
     }
 
     private void Update()
