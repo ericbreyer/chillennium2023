@@ -47,10 +47,6 @@ public class FarmTower : Tower, IClickHandler
             bank.AddChokes(10);
             hi.SetActive(false);
         }
-        else
-        {
-            home.detach();
-        }
         return;
     }
 
