@@ -42,6 +42,7 @@ public class Missile : PolarObject
         Collider2D[] results = new Collider2D[1];
         
         Vector3 goal = new Vector3(0, 0, 0);
+        if (cringe) goal = new Vector3(this.x * 1000, this.y * 1000, 0);
 
         if (target != null) goal = target.transform.position;
 
