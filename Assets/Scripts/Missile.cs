@@ -71,6 +71,7 @@ public class Missile : PolarObject
 
     void explode()
     {
+        Debug.Log("MISISEHI EXPLODING");
         Collider2D[] results = new Collider2D[25];
         int num = cc.OverlapCollider(cf, results);
         bool hit = false;

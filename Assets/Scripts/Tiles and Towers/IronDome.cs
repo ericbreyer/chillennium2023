@@ -57,7 +57,7 @@ public class IronDome : AttackTower
                 
                 lastAttackTime = Time.time;
                 toCheck[i].gameObject.SetActive(false);
-                Destroy(toCheck[i].gameObject);
+                DestroyImmediate(toCheck[i].gameObject);
                 break;
             }
         }
