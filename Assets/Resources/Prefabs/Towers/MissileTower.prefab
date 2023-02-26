@@ -120,9 +120,9 @@ MonoBehaviour:
   home: {fileID: 0}
   left: {fileID: 0}
   right: {fileID: 0}
-  depth: 0
   lr: 0
-  JANK_GAME_JAM_CONSTANT_DONT_CHANGE_COST: 0
+  JANK_GAME_JAM_CONSTANT_DONT_CHANGE_COST: 15
+  type: 0
   attackRate: 1
   range: 0.2
   damage: 0.2

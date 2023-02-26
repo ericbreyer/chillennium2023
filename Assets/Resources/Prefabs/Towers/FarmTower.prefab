@@ -471,13 +471,15 @@ MonoBehaviour:
   home: {fileID: 0}
   left: {fileID: 0}
   right: {fileID: 0}
-  height: 0
   lr: 0
   JANK_GAME_JAM_CONSTANT_DONT_CHANGE_COST: 10
+  type: 0
   rate: 10
   growingSprite: {fileID: 21300000, guid: 103ff4af9d346ce418cecb17f714e5a2, type: 3}
   grownSprite: {fileID: 21300000, guid: 82fb274d82a30bc4c96ab068ea5e8afb, type: 3}
+  fireSprite: {fileID: 21300000, guid: ca8dde03274ffe14db67b7e5fbc5d977, type: 3}
   hi: {fileID: 6352882880486048185}
+  type: 1
 --- !u!212 &8424058357344482681
 SpriteRenderer:
   m_ObjectHideFlags: 0
