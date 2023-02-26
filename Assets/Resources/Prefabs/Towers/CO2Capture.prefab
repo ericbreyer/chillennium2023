@@ -72,6 +72,32 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 7521566123437776834, guid: fc36542a4ffcec54e838c85bcd55dced, type: 3}
   m_PrefabInstance: {fileID: 1984073609761236896}
   m_PrefabAsset: {fileID: 0}
+--- !u!61 &-3309945483276100227
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8352243157493446754}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1, y: 1}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.2, y: 0.2}
+  m_EdgeRadius: 0
 --- !u!114 &5361279372778103684
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -97,10 +123,12 @@ MonoBehaviour:
   dirDynam: 0
   dirFlex: 0
   maxHealth: 0
+  height: 0
   home: {fileID: 0}
   left: {fileID: 0}
   right: {fileID: 0}
-  depth: 0
   lr: 0
   JANK_GAME_JAM_CONSTANT_DONT_CHANGE_COST: 50
+  JANK_GAME_JAM_CONSTANT_DONT_CHANGE_CO2_COST: 0
+  type: 0
   rate: 10
