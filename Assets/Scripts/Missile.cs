@@ -20,7 +20,7 @@ public class Missile : PolarObject
     {
         base.Start();
         this.startFlyTime = Time.time;
-        //cc = this.GetComponent<CircleCollider2D>();
+        cc = this.GetComponent<CircleCollider2D>();
         cc.radius = 0.3f;
         cc.isTrigger = true;
         cf = new ContactFilter2D();

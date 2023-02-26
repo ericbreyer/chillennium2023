@@ -16,7 +16,7 @@ public class MissileTower : AttackTower
     override protected void attack()
     {
 
-        var enems = FindObjectsByType<Enemy>(FindObjectsSortMode.None);
+        var enems = FindObjectsOfType<Enemy>();
         if(enems.Length > 0) {
             var closestEnem = enems[0];
             var dist = float.MaxValue;

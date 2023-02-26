@@ -5,13 +5,13 @@ using UnityEngine;
 public class BasicEnemy : Enemy
 {
     
-    private GameObject missile;
+    private Missile missile;
 
     // Start is called before the first frame update
     protected override void Start()
     {
         base.Start();
-        missile = Resources.Load<GameObject>("Prefabs/Missile");
+        missile = Resources.Load<Missile>("Prefabs/Missile");
         
     }
 
@@ -35,7 +35,7 @@ public class BasicEnemy : Enemy
         GameObject[] toCheck = GameObject.FindGameObjectsWithTag("Tower");
         bool hit = false;
             Planet planet = FindObjectOfType<Planet>();
-            Missile miss = Instantiate(this.missile).GetComponent<Missile>();
+            Missile miss = Instantiate(this.missile);
             miss.transform.Rotate(Vector3.forward, theta - miss.theta + 180);
             miss.transform.position = this.transform.position;
             miss.transform.localScale = new Vector3(0.1f, 0.1f, 0.1f);
