@@ -5,18 +5,21 @@ using UnityEngine;
 
 public class SolarPannel : Tower
 {
+    private float lastTime;
     private ArtichokeManager bank;
-    [SerializeField] private int rate;
+    public float rate;
 
     // Start is called before the first frame update
     void Start()
     {
         bank = GameObject.FindObjectOfType<ArtichokeManager>();
+        this.lastTime = Time.time;
     }
 
-    private void FixedUpdate() {
-        if(Time.frameCount % rate == 0) {
+    void Update() {
+        if(Time.time - this.lastTime > rate) {
             bank.AddChokes(1);
+            this.lastTime = Time.time;
         }
     }
 }

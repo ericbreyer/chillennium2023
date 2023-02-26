@@ -8,7 +8,8 @@ using TMPro;
 
 public class ArtichokeManager : MonoBehaviour
 {
-
+    private float startTime;
+    private float lastTime;
     public enum ValidChokeTransaction {
         Good,
         NotEnoughChokes
@@ -23,6 +24,7 @@ public class ArtichokeManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        startTime = Time.time;
         if (instance != null) {
             Destroy(instance);
         }
@@ -43,7 +45,9 @@ public class ArtichokeManager : MonoBehaviour
     }
     public void Update() {
         chokesUI.text = chokes.ToString();
-        if(Time.frameCount % 120 == 0) {
+        if(Time.time - lastTime > 3)
+        {
+            lastTime = Time.time;
             AddChokes(1);
         }
     }

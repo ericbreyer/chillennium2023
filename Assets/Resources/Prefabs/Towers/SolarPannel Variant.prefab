@@ -132,7 +132,7 @@ MonoBehaviour:
   left: {fileID: 0}
   right: {fileID: 0}
   lr: 0
-  JANK_GAME_JAM_CONSTANT_DONT_CHANGE_COST: 100
+  JANK_GAME_JAM_CONSTANT_DONT_CHANGE_COST: 90
   JANK_GAME_JAM_CONSTANT_DONT_CHANGE_CO2_COST: 0.05
   type: 0
-  rate: 10
+  rate: 0.4

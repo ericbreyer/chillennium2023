@@ -19,7 +19,7 @@ public class Explosion : MonoBehaviour
         {
             Destroy(this.gameObject);
             GameController obj = FindObjectOfType<GameController>();
-            obj.changeWarmth(0.01f);
+            obj.changeWarmth(0.005f);
         }
         
     }

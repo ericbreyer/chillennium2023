@@ -114,7 +114,7 @@ MonoBehaviour:
   dirDynam: 0
   dirFlex: 0
   maxHealth: 1
-  attackRate: 1
+  attackRate: 2
   damage: 1
   speed: 0.2
   range: 0.5

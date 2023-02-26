@@ -179,7 +179,14 @@ public class GameController : MonoBehaviour
     //this returns the delay in between enemy spawns given the difficulty
     float difficultyFunction(float d)
     {
-        return Mathf.Max(10*Mathf.Exp(-d) - 5f*d, 0.1f);
+
+        float[] diffTable =
+        {
+            8f, 7f, 6f, 5f, 3f,
+            2.0f, 1.5f, 1.1f, 0.8f, 0.6f, 0.15f
+        };
+        int index = (int)Mathf.Floor(10f * d);
+        return diffTable[index];
     }
 
     void warmthHandler()
@@ -196,10 +203,11 @@ public class GameController : MonoBehaviour
         if(warmth < 0)
         {
             warmth = 0;
+            this.artificialWarmth = -1*this.baseWarmth;
         }
         globalWarmingManager.SetGlobalWarming(warmth);
         SpriteRenderer rend = FindObjectOfType<Planet>().gameObject.transform.GetChild(0).gameObject.GetComponent<SpriteRenderer>();
-        rend.color = new Color(warmth, .2f*(1-warmth), 1-warmth, 1);
+        rend.color = new Color(2*warmth - 1/4, .4f* Mathf.Clamp(1f-2f*warmth, 0f, 1f), Mathf.Clamp(1f - 2f * warmth, 0f, 1f), 1);
     }
 
     public void changeWarmth(float warm)
