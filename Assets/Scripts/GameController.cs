@@ -184,25 +184,22 @@ public class GameController : MonoBehaviour
 
     void warmthHandler()
     {
-        if (this.baseWarmth > 1)
-        {
-            this.baseWarmth = 1;
-        }
-        else
-        {
             this.baseWarmth = warmthIncPerSec * (Time.time - this.gameStartTime);
-        }
+
         this.warmth = this.baseWarmth + this.artificialWarmth;
+        Debug.Log("This warmth: " + this.warmth);
         Debug.Log(this.artificialWarmth);
         if (warmth > 1)
         {
             warmth = 1;
         }
-        else if(warmth < 0)
+        if(warmth < 0)
         {
             warmth = 0;
         }
         globalWarmingManager.SetGlobalWarming(warmth);
+        SpriteRenderer rend = FindObjectOfType<Planet>().gameObject.transform.GetChild(0).gameObject.GetComponent<SpriteRenderer>();
+        rend.color = new Color(warmth, .2f*(1-warmth), 1-warmth, 1);
     }
 
     public void changeWarmth(float warm)

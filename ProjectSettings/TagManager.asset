@@ -8,6 +8,7 @@ TagManager:
   - Enemy
   - Tower
   - Planet
+  - triangle
   layers:
   - Default
   - TransparentFX
