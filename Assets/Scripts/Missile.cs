@@ -5,7 +5,7 @@ using UnityEngine;
 public class Missile : PolarObject
 {
     // Start is called before the first frame update
-    public GameObject target;
+    public GameObject target = null;
     public float flySpeed;
     public float maxFlyTime;
     private float startFlyTime;
@@ -16,10 +16,9 @@ public class Missile : PolarObject
     private Explosion explosion;
     private float damage;
 
-    protected override void Start()
+    protected void Awake()
     {
         base.Start();
-        this.cc = gameObject.GetComponent<CircleCollider2D>();
         this.startFlyTime = Time.time;
         //cc = this.GetComponent<CircleCollider2D>();
         cc.radius = 0.3f;
@@ -28,8 +27,7 @@ public class Missile : PolarObject
         cf.SetLayerMask(lm);
         this.explosion = Resources.Load<Explosion>("Prefabs/Explosion");
         flySpeed = 0.1f;
-        target = null;
-        damage = 1;
+        damage = 10;
         
     }
 

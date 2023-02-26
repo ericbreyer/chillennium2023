@@ -38,4 +38,8 @@ public class Enemy : Entity
     {
 
     }
+
+    public override void killChildren() {
+        Destroy(this.gameObject);
+    }
 }
