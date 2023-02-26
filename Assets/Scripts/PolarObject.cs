@@ -98,6 +98,7 @@ public class PolarObject : MonoBehaviour
 
     protected virtual void Start()
     {
+        Debug.Log("Did we get here7");
         this.transform.Rotate(Vector3.forward, -90);
         height = 1f;
         width = 1f;
