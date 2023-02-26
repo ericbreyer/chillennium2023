@@ -142,13 +142,13 @@ MonoBehaviour:
   dirConst: 0
   dirDynam: 0
   dirFlex: 0
-  maxHealth: 1
+  maxHealth: 3
   height: 0
   home: {fileID: 0}
   left: {fileID: 0}
   right: {fileID: 0}
   lr: 0
-  JANK_GAME_JAM_CONSTANT_DONT_CHANGE_COST: 35
+  JANK_GAME_JAM_CONSTANT_DONT_CHANGE_COST: 25
   JANK_GAME_JAM_CONSTANT_DONT_CHANGE_CO2_COST: 0.25
   type: 0
   attackRate: 2
