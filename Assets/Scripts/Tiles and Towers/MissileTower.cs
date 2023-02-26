@@ -16,7 +16,8 @@ public class MissileTower : AttackTower
     {
         Collider2D[] results = new Collider2D[1];
         this.cf.SetLayerMask(lm);
-        if(cc.OverlapCollider(this.cf, results) > 0.5f)
+
+        if(cc.OverlapCollider(this.cf, results) != 0)
         {
             Missile miss = Instantiate(this.attackPrefab).GetComponent<Missile>();
             miss.transform.localScale = results[0].transform.localScale;
