@@ -46,11 +46,11 @@ public class TileHolder : PolarObject, IClickHandler
             FarmTower dummy = null;
             if(puim.getSelectedTower().TryGetComponent<FarmTower>(out dummy))
             {
-                Debug.Log("Got here");
+                //Debug.Log("Got here");
                 if (height == 0 && empty == true)
                 {
                     sprite.enabled = true;
-                    Debug.Log("Got here 2");
+                    //Debug.Log("Got here 2");
                 }
             }    
             else

@@ -63,13 +63,11 @@ public class Tower : PolarObject
         if (countr > 1)
         {
             Destroy(right.gameObject);
-            Debug.Log(countr);
 
         }
         if (countl > 1)
         {
             Destroy(left.gameObject);
-            Debug.Log(countl);
 
         }
 
@@ -98,6 +96,7 @@ public class Tower : PolarObject
 
     public override void killChildren() 
     {
+        Debug.Log("killChildren");
         if(left.tower != null)
         {
             left.tower.killChildren();

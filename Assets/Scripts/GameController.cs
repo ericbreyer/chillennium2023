@@ -155,7 +155,7 @@ public class GameController : MonoBehaviour
             float chance = Random.value;
             for(int i = 0; i < numEnemyPrefabs; i++)
             {
-                Debug.Log("Current chance: " + chanceVals[i]);
+                //Debug.Log("Current chance: " + chanceVals[i]);
                 if(chanceVals[i] > chance)
                 {
                     Enemy newEnemy = Instantiate(enemyList[i]);
