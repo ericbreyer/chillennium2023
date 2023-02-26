@@ -44,8 +44,8 @@ public class MissileTower : AttackTower
             {
                 miss.transform.Rotate(Vector3.forward, miss.target.GetComponent<PolarObject>().theta - miss.theta + 90);
             }
-            miss.maxFlyTime = 2;
-            miss.flySpeed = .2f;
+            miss.maxFlyTime = 1;
+            miss.flySpeed = .5f;
             lastAttackTime = Time.time;
             miss.setLM(this.lm);
             miss.setDamage(10);

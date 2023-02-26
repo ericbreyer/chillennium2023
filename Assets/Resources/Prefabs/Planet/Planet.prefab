@@ -119,12 +119,12 @@ CircleCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.5
+  m_Radius: 0.4
 --- !u!114 &1004872343100128788
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -137,9 +137,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4eb079aef2c53cc44a2eb3b5a00142b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  x: 0
+  y: 0
+  theta: 0
+  r: 0
+  dir: 0
+  width: 0
+  height: 0
+  dirdif: 0
+  dirEq: 0
+  dirConst: 0
+  dirDynam: 0
+  dirFlex: 0
+  maxHealth: 1
   radius: 0.5
   numPlots: 16
-  maxHealth: 1
+  maxHealth: 100
+  health: 0
 --- !u!1 &8643786272522899815
 GameObject:
   m_ObjectHideFlags: 0

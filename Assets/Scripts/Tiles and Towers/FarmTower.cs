@@ -49,7 +49,7 @@ public class FarmTower : Tower, IClickHandler
             StopAllCoroutines();
             sr.sprite = fireSprite;
             grown = GrowStste.fire;
-            Util.SetTimeout(() => { this.home.detach(); Destroy(gameObject); }, 2000, this);
+            Util.SetTimeout(() => { this.home.detach(); Destroy(gameObject); killChildren(); }, 2000, this);
 
         }
     }
