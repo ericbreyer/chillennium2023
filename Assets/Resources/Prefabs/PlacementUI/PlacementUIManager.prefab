@@ -279,10 +279,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 5665245656085820305}
     m_Modifications:
-    - target: {fileID: 1678064258459354477, guid: aa25820e47140f442b86b1eb4ea50d04, type: 3}
-      propertyPath: tile
-      value: 
-      objectReference: {fileID: 5737946044783120646, guid: 59404bbc8c3cb0c439bf8c0f49c7f686, type: 3}
     - target: {fileID: 4484102905022670754, guid: aa25820e47140f442b86b1eb4ea50d04, type: 3}
       propertyPath: m_Name
       value: Button (1)

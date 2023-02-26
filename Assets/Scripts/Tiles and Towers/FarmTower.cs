@@ -42,6 +42,7 @@ public class FarmTower : Tower, IClickHandler
             grown = GrowStste.growing;
             Util.SetTimeout(() => { this.grown = GrowStste.grown; }, 7000, this);
         }
+        transform.position = new Vector3(transform.position.x, transform.position.y, 100f);
 
         //var rand = Random.value;
         //if(rand * 100 < controller.getWarmth()) {

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Tower : PolarObject
 {
-    
+    public new int height = 0;
     public TileHolder home;
     public TileHolder left;
     public TileHolder right;
