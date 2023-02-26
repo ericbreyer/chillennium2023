@@ -5,14 +5,14 @@ using UnityEngine;
 
 public class TileHolder : PolarObject, IClickHandler
 {
-    public int height = 0;
+    public new int height = 0;
     public Tower tower;
     public int numtowers;
     public ParticleSystem ps;
     public bool empty;
     public SpriteRenderer sprite;
     private PlacementUIManager puim;
-    public int height = 0;
+   
     
 
     public void attach(Tower offspring)
@@ -35,14 +35,16 @@ public class TileHolder : PolarObject, IClickHandler
         puim = FindObjectOfType<PlacementUIManager>();
         Debug.Log(GetComponent<BoxCollider2D>().bounds.ToString());
         sprite.enabled = false;
+        gameObject.GetComponent<BoxCollider2D>().enabled = true;
+
     }
 
     void Update() 
     {
         if (puim.getSelectedTower() != null)
         {
-            CircleCollider2D dummy = null;
-            if(puim.getSelectedTower().TryGetComponent<CircleCollider2D>(out dummy))
+            FarmTower dummy = null;
+            if(puim.getSelectedTower().TryGetComponent<FarmTower>(out dummy))
             {
                 Debug.Log("Got here");
                 if (height == 0 && empty == true)
@@ -83,6 +85,7 @@ public class TileHolder : PolarObject, IClickHandler
             gameObject.GetComponent<ParticleSystem>().Stop();
             empty = false;
             sprite.enabled = false;
+            gameObject.GetComponent<BoxCollider2D>().enabled = false;
         }
     }
 
@@ -102,6 +105,8 @@ public class TileHolder : PolarObject, IClickHandler
         {
             empty = true;
             tower.killChildren();
+            gameObject.GetComponent<BoxCollider2D>().enabled = true;
+
         }
     }
 

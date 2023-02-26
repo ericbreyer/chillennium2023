@@ -14,8 +14,9 @@ public class AttackTower : Tower
     protected ContactFilter2D cf;
 
     // Start is called before the first frame update
-    void Start()
+    protected override void Start()
     {
+        base.Start();
         lastAttackTime = Time.time;
         cc = this.GetComponent<CircleCollider2D>();
         cc.radius = this.range;

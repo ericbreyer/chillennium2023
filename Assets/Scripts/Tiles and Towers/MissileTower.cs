@@ -5,9 +5,10 @@ using UnityEngine;
 public class MissileTower : AttackTower
 {
     // Start is called before the first frame update
-    public 
-    void Start()
+    
+    protected override void Start()
     {
+        base.Start();
         attackPrefab = Resources.Load<GameObject>("Attacks/Missile");
     }
 
