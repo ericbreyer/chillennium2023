@@ -44,13 +44,14 @@ public class FarmTower : Tower, IClickHandler
         }
         transform.position = new Vector3(transform.position.x, transform.position.y, 100f);
 
-        //var rand = Random.value;
-        //if(rand * 100 < controller.getWarmth()) {
-        //    sr.sprite = fireSprite;
-        //    grown = GrowStste.fire;
-        //    Util.SetTimeout(() => { this.home.detach(); Destroy(gameObject); }, 2000, this);
+        var rand = Random.value;
+        if (rand * 7500 < controller.getWarmth()) {
+            StopAllCoroutines();
+            sr.sprite = fireSprite;
+            grown = GrowStste.fire;
+            Util.SetTimeout(() => { this.home.detach(); Destroy(gameObject); }, 2000, this);
 
-        //}
+        }
     }
 
     public void DoClick() {

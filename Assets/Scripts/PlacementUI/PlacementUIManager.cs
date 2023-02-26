@@ -10,6 +10,7 @@ public class PlacementUIManager : MonoBehaviour
     private SpriteRenderer ghostTowerSR;
     private Camera cam;
     private ArtichokeManager bank;
+    private GameController gw;
     public void setSelectedTower(Tower tile) {
         SelectedTower = tile.gameObject;
         ghostTowerSR.sprite = tile.gameObject.GetComponent<SpriteRenderer>().sprite;
@@ -27,6 +28,7 @@ public class PlacementUIManager : MonoBehaviour
         GhostTower.SetActive(false);
         cam = FindObjectOfType<Camera>();
         bank = FindObjectOfType<ArtichokeManager>();
+        gw= FindObjectOfType<GameController>();
     }
 
     // Update is called once per frame
@@ -34,6 +36,7 @@ public class PlacementUIManager : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(1)) {
             bank.AddChokes(SelectedTower.GetComponent<Tower>().JANK_GAME_JAM_CONSTANT_DONT_CHANGE_COST);
+            gw.changeWarmth(-SelectedTower.GetComponent<Tower>().JANK_GAME_JAM_CONSTANT_DONT_CHANGE_CO2_COST);
             SelectedTower = null;
         }
 

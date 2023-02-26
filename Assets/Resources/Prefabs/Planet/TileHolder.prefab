@@ -4854,8 +4854,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 2003431965
+  m_SortingLayer: -3
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 07211617769240542b71dc07b0cc8211, type: 3}
   m_Color: {r: 0.6981132, g: 0.2828734, b: 0.023050921, a: 0.38431373}
@@ -4978,6 +4978,7 @@ MonoBehaviour:
   dirDynam: 0
   dirFlex: 0
   maxHealth: 0
+  height: 0
   tower: {fileID: 0}
   numtowers: 0
   ps: {fileID: 0}
