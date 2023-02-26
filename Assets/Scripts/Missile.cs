@@ -42,14 +42,17 @@ public class Missile : PolarObject
         Collider2D[] results = new Collider2D[1];
         
         Vector3 goal = new Vector3(0, 0, 0);
-        if (cringe) goal = new Vector3(this.x * 1000, this.y * 1000, 0);
+        if (cringe)
+        {
+            goal = new Vector3(this.transform.position[0] * 1000, this.transform.position[1] * 1000, 0);
+            this.flySpeed = 1;
+        }
 
         if (target != null) goal = target.transform.position;
+      
 
         if (Vector3.Distance(this.transform.position, goal) < triggerRadius)
-        {
-
-            
+        {   
             explode();
         }
         else if (cc.OverlapCollider(cf, results) >= 1)
