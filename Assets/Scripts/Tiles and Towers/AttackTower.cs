@@ -14,9 +14,10 @@ public class AttackTower : Tower
     protected ContactFilter2D cf;
 
     // Start is called before the first frame update
-    protected override void Start()
+    override protected void Start()
     {
         base.Start();
+        Debug.Log("Did we get here");
         lastAttackTime = Time.time;
         cc = this.GetComponent<CircleCollider2D>();
         cc.radius = this.range / this.transform.localScale.x;
@@ -24,10 +25,11 @@ public class AttackTower : Tower
         cf = new ContactFilter2D();
         cf.SetLayerMask(lm);
         this.attackPrefab = Resources.Load<GameObject>("Prefabs/Missile");
+        Debug.Log("Did we get here");
     }
 
     // Update is called once per frame
-    void Update()
+    protected virtual void Update()
     {
         if(Time.time - this.lastAttackTime > attackRate)
         {
