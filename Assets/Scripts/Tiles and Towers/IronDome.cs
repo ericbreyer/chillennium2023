@@ -49,13 +49,14 @@ public class IronDome : AttackTower
         Missile[] toCheck = FindObjectsOfType<Missile>();
         for(int i = 0; i < toCheck.Length; i++)
         {
-            if ((this.transform.position - toCheck[i].transform.position).magnitude < this.range)
+            if ((this.transform.position - toCheck[i].transform.position).magnitude < this.range && toCheck[i].cringe == false)
             {
                 Instantiate(attackPrefab);
                 Vector3[] pos = { this.transform.position, toCheck[i].transform.position };
                 line.SetPositions(pos);
                 
                 lastAttackTime = Time.time;
+                toCheck[i].gameObject.SetActive(false);
                 Destroy(toCheck[i].gameObject);
                 break;
             }

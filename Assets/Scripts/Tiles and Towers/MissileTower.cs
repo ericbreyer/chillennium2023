@@ -38,6 +38,7 @@ public class MissileTower : AttackTower
             var bruah = this.transform.up;
             bruah.Scale(new Vector3(.1f, .1f, .1f));
             miss.transform.position = this.transform.position + bruah;
+            miss.cringe = true;
             miss.setTarget(closestEnem.gameObject);
             miss.maxFlyTime = 2;
             miss.flySpeed = .2f;
