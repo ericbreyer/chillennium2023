@@ -15,6 +15,7 @@ public class ScoreManager : MonoBehaviour
     void Update()
     {
         score = (int)Time.time - baseTime;
+        Debug.LogWarning(score);
         scoreUI.text = score.ToString();
     }
     private void OnEnable() {

@@ -30,6 +30,8 @@ public class GameController : MonoBehaviour
     private GlobalWarmingManager globalWarmingManager;
     private ArtichokeManager artichokeManager;
     private ScoreManager scoreManager;
+    private PlanetHeathUI planetHeathUI;
+    private DeathManager deathManager;
     [SerializeField] private Canvas startScreen;
     [SerializeField] private Canvas pauseCanvas;
     private bool paused = false;
@@ -53,10 +55,14 @@ public class GameController : MonoBehaviour
         globalWarmingManager = FindObjectOfType<GlobalWarmingManager>();
         artichokeManager = FindObjectOfType<ArtichokeManager>();
         scoreManager = FindObjectOfType<ScoreManager>();
+        planetHeathUI = FindObjectOfType<PlanetHeathUI>();
+        deathManager = FindObjectOfType<DeathManager>();
         placeUIMan.gameObject.SetActive(false);
         globalWarmingManager.gameObject.SetActive(false);
         artichokeManager.gameObject.SetActive(false);
         scoreManager.gameObject.SetActive(false);
+        planetHeathUI.gameObject.SetActive(false);
+        deathManager.gameObject.SetActive(false);
         startScreen.gameObject.SetActive(true);
 
         FindObjectOfType<AudioManager>().PlayMusic(0);
@@ -99,6 +105,8 @@ public class GameController : MonoBehaviour
                 globalWarmingManager.gameObject.SetActive(true);
                 artichokeManager.gameObject.SetActive(true);
                 scoreManager.gameObject.SetActive(true);
+                planetHeathUI.gameObject.SetActive(true);
+                deathManager.gameObject.SetActive(true);
                 startScreen.gameObject.SetActive(false);
 
                 //Initializing game time values
