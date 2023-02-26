@@ -17,11 +17,11 @@ public class Enemy : Entity
     protected override void Start()
     {
         base.Start();
-        cc = this.GetComponent<CircleCollider2D>();
-        cc.radius = this.range/this.transform.localScale.x;
-        cc.isTrigger = true;
-        cf = new ContactFilter2D();
-        cf.SetLayerMask(lm);
+        //cc = this.GetComponent<CircleCollider2D>();
+        //cc.radius = this.range / this.transform.localScale.x;
+        //cc.isTrigger = true;
+        //cf = new ContactFilter2D();
+        //cf.SetLayerMask(lm);
     }
 
     // Update is called once per frame

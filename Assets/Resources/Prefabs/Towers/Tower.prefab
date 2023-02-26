@@ -19,6 +19,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 6
       objectReference: {fileID: 0}
+    - target: {fileID: 5464589976339254782, guid: 920c9cfa13b4b724c9eea0d423ccfa1a, type: 3}
+      propertyPath: m_TagString
+      value: Tower
+      objectReference: {fileID: 0}
     - target: {fileID: 7886864426255495989, guid: 920c9cfa13b4b724c9eea0d423ccfa1a, type: 3}
       propertyPath: m_RootOrder
       value: 0
