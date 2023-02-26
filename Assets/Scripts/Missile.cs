@@ -72,21 +72,28 @@ public class Missile : PolarObject
     {
         Collider2D[] results = new Collider2D[25];
         int num = cc.OverlapCollider(cf, results);
+        bool hit = false;
         for(int i = 0; i<Mathf.Min(num, 25); i++)
         {
             Planet p;
             Tower po;
             if(results[i].gameObject.TryGetComponent<Tower>(out po))
             {
-                Debug.Log("hitting Tower");
-                Debug.Log(po.transform.position);
-                Debug.Log(Vector3.Distance(cc.transform.position, po.transform.position));
-                po.takeDamage(this.damage);
+                //Debug.Log("hitting Tower");
+                //Debug.Log(po.transform.position);
+                //Debug.Log(Vector3.Distance(cc.transform.position, po.transform.position));
+                if (results[i].bounds.size[0] < 1)
+                {
+                    po.takeDamage(this.damage);
+                    hit = true;
+                }
             }
             else if(results[i].gameObject.TryGetComponent<Planet>(out p))
             {
                 p.takeDamage(this.damage);
+                hit = true;
             }
+            if (hit) break;
         }
         Explosion tada =  Instantiate(explosion);
         tada.transform.SetPositionAndRotation(this.transform.position, Quaternion.identity);    
