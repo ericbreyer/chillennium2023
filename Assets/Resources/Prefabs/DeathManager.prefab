@@ -170,7 +170,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 21.1, y: 67.6}
+  m_AnchoredPosition: {x: -64, y: 78.4}
   m_SizeDelta: {x: 442, y: 77}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &357339553
@@ -305,7 +305,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 35.95, y: -55}
+  m_AnchoredPosition: {x: 35.95, y: -32.95}
   m_SizeDelta: {x: 442.1, y: 125.7}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1216894798
@@ -346,7 +346,9 @@ MonoBehaviour:
 
     Art/UI: Eric Breyer
 
-    Music/SFX: Luke Mason'
+    Music/SFX: Luke Mason
+
+    Thanks for playing!'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
