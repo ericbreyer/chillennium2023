@@ -28,7 +28,7 @@ public class MissileTower : AttackTower
                     dist = newDist;
                 }
             }
-            if (dist > .5) return;
+            if (dist > .75) return;
             //closestEnem.takeDamage(10f);
 
             Planet planet = FindObjectOfType<Planet>();

@@ -43,5 +43,8 @@ public class ArtichokeManager : MonoBehaviour
     }
     public void Update() {
         chokesUI.text = chokes.ToString();
+        if(Time.frameCount % 120 == 0) {
+            AddChokes(1);
+        }
     }
 }

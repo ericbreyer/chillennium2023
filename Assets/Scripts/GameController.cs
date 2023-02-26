@@ -179,7 +179,7 @@ public class GameController : MonoBehaviour
     //this returns the delay in between enemy spawns given the difficulty
     float difficultyFunction(float d)
     {
-        return Mathf.Max(10*Mathf.Exp(-d) - 3f*d, 0.1f);
+        return Mathf.Max(10*Mathf.Exp(-d) - 5f*d, 0.1f);
     }
 
     void warmthHandler()
