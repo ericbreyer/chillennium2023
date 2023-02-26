@@ -18,6 +18,9 @@ public class Explosion : MonoBehaviour
         if(Time.time - startTime > length)
         {
             Destroy(this.gameObject);
+            GameController obj = FindObjectOfType<GameController>();
+            obj.changeWarmth(0.01f);
         }
+        
     }
 }
