@@ -27,11 +27,8 @@ public class Enemy : Entity
     // Update is called once per frame
     protected virtual void Update()
     {
-        Debug.Log("UPDAITGN");
-        Debug.Log("TimeL " + Time.time + " " + this.attackRate);
         if (Time.time - this.lastAttackTime > this.attackRate)
         {
-            Debug.Log("AIWUAFHAIUEWFBAIBFIABFDIAWBDAWIHSBD");
             attack();
             this.lastAttackTime = Time.time;
         }

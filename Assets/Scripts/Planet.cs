@@ -5,11 +5,11 @@ using UnityEngine;
 
 //everything needs to inherit the things above it. Things attacking any tower or structure will inherit those things. Planet will not inherit enemy, only other way around
 
-public class Planet : MonoBehaviour
+public class Planet : PolarObject
 {
     public float radius;
     public int numPlots;
-    public float maxHealth;
+    public new float maxHealth;
     private float health;
 
     //tileholder prefab
@@ -19,8 +19,9 @@ public class Planet : MonoBehaviour
     private TileHolder[] plotList;
     
     // Start is called before the first frame update
-    void Start()
+    protected override void Start()
     {
+        base.Start();
         health = maxHealth;
         this.transform.localScale = new Vector3(radius*2, radius*2, 1);
 

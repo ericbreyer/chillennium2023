@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Missile : MonoBehaviour
+public class Missile : PolarObject
 {
     // Start is called before the first frame update
     public GameObject target;
@@ -13,31 +13,41 @@ public class Missile : MonoBehaviour
     private LayerMask lm;
     private CircleCollider2D cc;
     private ContactFilter2D cf;
-    private GameObject explosion;
+    private Explosion explosion;
     private float damage;
 
-    void Start()
+    protected override void Start()
     {
+        base.Start();
         this.cc = gameObject.GetComponent<CircleCollider2D>();
         this.startFlyTime = Time.time;
         cc = this.GetComponent<CircleCollider2D>();
-        cc.radius = 1;
+        cc.radius = 0.3f;
         cc.isTrigger = true;
         cf = new ContactFilter2D();
         cf.SetLayerMask(lm);
-        this.explosion = Resources.Load<GameObject>("Prefabs/Explosion");
+        this.explosion = Resources.Load<Explosion>("Prefabs/Explosion");
+        flySpeed = 0.1f;
+        target = null;
+        damage = 1;
+        
     }
 
     // Update is called once per frame
     void Update()
     {
+        
+        //this.transform.position = (target.transform.position - this.transform.position) * Time.deltaTime + this.transform.position;
+        //Debug.Log(Vector3.up * Time.deltaTime);
         Collider2D[] results = new Collider2D[1];
-        if (target == null)
+        
+        Vector3 goal = new Vector3(0, 0, 0);
+
+        if (target != null) goal = target.transform.position;
+
+        if (Vector3.Distance(this.transform.position, goal) < triggerRadius)
         {
-            explode();
-        }
-        else if (Vector3.Distance(this.transform.position, target.transform.position) < triggerRadius)
-        {
+
             explode();
         }
         else if (cc.OverlapCollider(cf, results) >= 1)
@@ -45,16 +55,17 @@ public class Missile : MonoBehaviour
             explode();
         }
         else if (Time.time - startFlyTime > maxFlyTime)
+
         {
             explode();
         }
         else
         {
-            this.transform.LookAt(target.transform);
-            Vector3 travel = (target.transform.position - this.transform.position).normalized * flySpeed * Time.deltaTime;
+            Vector3 travel = (goal - this.transform.position) * Time.deltaTime;
+            //Debug.Log(travel);
             this.transform.position += travel;
         }
-        
+
     }
 
     void explode()
@@ -74,13 +85,17 @@ public class Missile : MonoBehaviour
                 p.takeDamage(this.damage);
             }
         }
-        Instantiate(explosion, this.transform);
+        Explosion tada =  Instantiate(explosion);
+        tada.transform.SetPositionAndRotation(this.transform.position, Quaternion.identity);    
+
         Destroy(this.gameObject);
     }
 
     public void setTarget(GameObject tar)
     {
         this.target = tar;
+        this.transform.Rotate(Vector3.forward, -tar.GetComponent<PolarObject>().theta - this.theta + 180);
+
     }
 
     public void setLM(LayerMask lay)

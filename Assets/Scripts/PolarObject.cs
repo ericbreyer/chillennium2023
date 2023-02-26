@@ -66,7 +66,6 @@ public class PolarObject : MonoBehaviour
     {
       
         this.r = newR;
-        Debug.Log("R is being set to " + newR + " " + this.r);
         theta = newTheta;
         this.transform.position = new Vector2(0, 0);
         if (dirDynam)
@@ -89,8 +88,8 @@ public class PolarObject : MonoBehaviour
         y = r * Mathf.Sin(theta * Mathf.PI / 180);
         
         this.transform.position = new Vector2(x, y);
-        
-        
+
+        health = 3;
         
 
        // this.transform.eulerAngles = new Vector3(0f,0f,Mathf.Rad2Deg * dir - 90f);
@@ -99,7 +98,6 @@ public class PolarObject : MonoBehaviour
 
     protected virtual void Start()
     {
-        Debug.Log("We got here1");
         this.transform.Rotate(Vector3.forward, -90);
         height = 1f;
         width = 1f;
@@ -112,7 +110,6 @@ public class PolarObject : MonoBehaviour
         if(this.health <= 0)
         {
             killChildren();
-            Destroy(this);
         }
     }
     public virtual void killChildren()

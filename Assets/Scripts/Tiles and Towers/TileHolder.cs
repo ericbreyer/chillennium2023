@@ -104,7 +104,6 @@ public class TileHolder : PolarObject, IClickHandler
         if(!empty)
         {
             empty = true;
-            tower.killChildren();
             gameObject.GetComponent<BoxCollider2D>().enabled = true;
 
         }

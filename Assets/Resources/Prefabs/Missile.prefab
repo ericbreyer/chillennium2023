@@ -28,7 +28,7 @@ Transform:
   m_GameObject: {fileID: 5761361461824618132}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -46,6 +46,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bd42c96bfe44bdf4a916fb1acf96ada8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  x: 0
+  y: 0
+  theta: 0
+  r: 0
+  dir: 0
+  width: 0
+  height: 0
+  dirdif: 0
+  dirEq: 0
+  dirConst: 0
+  dirDynam: 0
+  dirFlex: 0
+  maxHealth: 0
   target: {fileID: 0}
   flySpeed: 0.05
   maxFlyTime: 1
@@ -117,4 +130,4 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.57211536
+  m_Radius: 0.5

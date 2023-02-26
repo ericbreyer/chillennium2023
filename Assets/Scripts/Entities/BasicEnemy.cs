@@ -23,7 +23,6 @@ public class BasicEnemy : Enemy
         
        if(this.r - FindObjectOfType<Planet>().radius > this.range * 0.5)
         {
-            Debug.Log("We are goweofaefiaef");
             this.setPosPol(this.r - this.speed * Time.deltaTime, this.theta);
         }
     }
@@ -35,31 +34,14 @@ public class BasicEnemy : Enemy
 
         GameObject[] toCheck = GameObject.FindGameObjectsWithTag("Tower");
         bool hit = false;
-        for (int i = 0; i < toCheck.Length; i++)
-        {
-            if (Vector3.Distance(this.transform.position, toCheck[i].transform.position) < this.range)
-            {
-                hit = true;
-                Missile miss = Instantiate(this.missile).GetComponent<Missile>();
-                miss.transform.position = this.transform.position;
-                miss.transform.localScale = toCheck[i].transform.localScale;
-                lastAttackTime = Time.time;
-                miss.setLM(this.lm);
-                miss.setTarget(toCheck[i].gameObject);
-                miss.setDamage(this.damage);
-            }
-        }
-        if (!hit)
-        {
             Planet planet = FindObjectOfType<Planet>();
             Missile miss = Instantiate(this.missile).GetComponent<Missile>();
+            miss.transform.Rotate(Vector3.forward, theta - miss.theta + 180);
             miss.transform.position = this.transform.position;
-            miss.transform.localScale = planet.gameObject.transform.localScale/10;
+            miss.transform.localScale = new Vector3(0.1f, 0.1f, 0.1f);
             lastAttackTime = Time.time;
             miss.setLM(this.lm);
-            miss.setTarget(planet.gameObject);
             miss.setDamage(this.damage);
-        }
 
         //Collider2D[] results = new Collider2D[1];
         //this.cf.SetLayerMask(lm);

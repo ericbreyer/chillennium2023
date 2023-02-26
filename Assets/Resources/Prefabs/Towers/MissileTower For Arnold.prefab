@@ -65,7 +65,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7521566123437776834, guid: fc36542a4ffcec54e838c85bcd55dced, type: 3}
       propertyPath: m_Name
-      value: MissileTower
+      value: MissileTower For Arnold
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 8977993308377085613, guid: fc36542a4ffcec54e838c85bcd55dced, type: 3}
@@ -86,7 +86,7 @@ CircleCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -117,6 +117,7 @@ MonoBehaviour:
   dirDynam: 0
   dirFlex: 0
   maxHealth: 1
+  height: 0
   home: {fileID: 0}
   left: {fileID: 0}
   right: {fileID: 0}

@@ -100,13 +100,14 @@ public class Tower : PolarObject
         if(left.tower != null)
         {
             left.tower.killChildren();
-            Destroy(left.gameObject);
         }
         if(right.tower != null)
         {
             right.tower.killChildren();
-            Destroy(right.gameObject);
         }
+        if(left != null)Destroy(left.gameObject);
+        if(right != null) Destroy(right.gameObject);
+        if(home!= null) home.detach();  
         Destroy(this.gameObject);
     }
 
