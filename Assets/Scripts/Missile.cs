@@ -16,6 +16,8 @@ public class Missile : PolarObject
     private Explosion explosion;
     private float damage;
 
+    public bool cringe = false ;
+
     protected void Awake()
     {
         base.Start();
@@ -101,8 +103,8 @@ public class Missile : PolarObject
             if (hit) break;
         }
         Explosion tada =  Instantiate(explosion);
-        tada.transform.SetPositionAndRotation(this.transform.position, Quaternion.identity);    
-
+        tada.transform.SetPositionAndRotation(this.transform.position, Quaternion.identity);
+        this.gameObject.SetActive(false);
         Destroy(this.gameObject);
     }
 

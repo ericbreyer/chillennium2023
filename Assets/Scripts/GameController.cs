@@ -174,12 +174,12 @@ public class GameController : MonoBehaviour
     //this returns the delay in between enemy spawns given the difficulty
     float difficultyFunction(float d)
     {
-        return 1f / (d + 0.1f) + 10;
+        return 20*(1-d)+3;
     }
 
     void warmthHandler()
     {
-        this.baseWarmth += warmthIncPerSec;
+        this.baseWarmth = difficulty;
         this.warmth = this.baseWarmth + this.artificialWarmth;
         if (warmth > 1)
         {
