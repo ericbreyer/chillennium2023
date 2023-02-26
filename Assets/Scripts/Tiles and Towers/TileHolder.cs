@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class TileHolder : PolarObject, IClickHandler
 {
+    public int height = 0;
     public Tower tower;
     public int numtowers;
     public ParticleSystem ps;
