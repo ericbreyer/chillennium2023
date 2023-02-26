@@ -7,6 +7,7 @@ using UnityEngine.SceneManagement;
 public class DeathManager : MonoBehaviour
 {
     public TMP_Text scoreUI;
+    public TMP_Text dyedByUI;
     public Canvas endScreen;
     private GameController gameController;
     private Planet planet;
@@ -29,6 +30,13 @@ public class DeathManager : MonoBehaviour
             endScreen.gameObject.SetActive(true);
             Time.timeScale = 0f;
             scoreUI.text = "Survived for " + scoreManager.GetScore() + " secs";
+
+            if(gameController.getWarmth() >= 1f) {
+                dyedByUI.text = "You Lost to Gloabal Warming";
+            }
+            else if (planet.health <= 0) {
+                dyedByUI.text = "You Lost to the Aliens";
+            }
         }
 
         if(endScreen.gameObject.activeSelf && Input.GetKeyDown(KeyCode.Space)) {
