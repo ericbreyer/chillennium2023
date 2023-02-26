@@ -419,13 +419,9 @@ GameObject:
   - component: {fileID: 8424058357344482681}
   - component: {fileID: 2997432503435026661}
   - component: {fileID: 6580262791401712865}
-<<<<<<< HEAD
   m_Layer: 6
-=======
   - component: {fileID: 9083557038979530114}
   - component: {fileID: -9063660246996776014}
-  m_Layer: 0
->>>>>>> 74c782ee9b034ee787854b6fd99927a40d3bce80
   m_Name: FarmTower
   m_TagString: Untagged
   m_Icon: {fileID: 0}
