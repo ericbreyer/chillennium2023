@@ -271,7 +271,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4f231c4fb786f3946a6b90b886c48677, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_SendPointerHoverToParent: 1
   m_HorizontalAxis: Horizontal
   m_VerticalAxis: Vertical
   m_SubmitButton: Submit
@@ -904,8 +903,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startingWarmth: 0.1
   startingDifficulty: 0
-  diffIncPerSec: 0.005
-  warmthIncPerSec: 0.005
+  diffIncPerSec: 0.002
+  warmthIncPerSec: 0.002
   numEnemyPrefabs: 1
   startScreen: {fileID: 36741061}
   pauseCanvas: {fileID: 2097012626801884429}
