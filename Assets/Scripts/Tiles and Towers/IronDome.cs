@@ -26,18 +26,18 @@ public class IronDome : AttackTower
         //Debug.Log("Did we get here");
         float wide = this.transform.localScale.x / 3f;
         line.SetWidth(wide, wide);
-        lineDuration = 0.2f;
+        lineDuration = 0.05f;
         Vector3[] positions = new Vector3[2];
         if (Time.time - lastAttackTime < lineDuration)
         {
-            Color col = new Color(1, 1, 1, (Time.time - lastAttackTime) / lineDuration);
+            Color col = new Color(1, 0, 0, (Time.time - lastAttackTime) / lineDuration);
             line.SetColors(col, col);
             line.GetPositions(positions);
             line.SetPositions(positions);
         }
         else
         {
-            Color col = new Color(1, 1, 1, 0);
+            Color col = new Color(1, 0, 0, 0);
             line.SetColors(col, col);
             line.GetPositions(positions);
             line.SetPositions(positions);
