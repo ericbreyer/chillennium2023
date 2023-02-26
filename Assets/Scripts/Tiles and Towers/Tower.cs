@@ -11,6 +11,7 @@ public class Tower : PolarObject
     public int lr;
     public int JANK_GAME_JAM_CONSTANT_DONT_CHANGE_COST;
     public int type;
+    public int height = 0;
     
 
     public void attachB(TileHolder basis)
