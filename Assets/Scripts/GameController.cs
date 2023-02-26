@@ -181,6 +181,7 @@ public class GameController : MonoBehaviour
     {
         this.baseWarmth = difficulty;
         this.warmth = this.baseWarmth + this.artificialWarmth;
+        Debug.Log(this.artificialWarmth);
         if (warmth > 1)
         {
             warmth = 1;
@@ -194,6 +195,7 @@ public class GameController : MonoBehaviour
 
     public void changeWarmth(float warm)
     {
+        Debug.Log("here");
         artificialWarmth += warm;
     }
 
