@@ -16,7 +16,7 @@ public class CarbonCapture : Tower
 
     private void FixedUpdate() {
         if(Time.frameCount % rate == 0) {
-            gm.changeWarmth(-.01f);
+            gm.changeWarmth(-.002f);
         }
     }
 }

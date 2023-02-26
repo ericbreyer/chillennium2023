@@ -9,7 +9,7 @@ public class MissileTower : AttackTower
     protected override void Start()
     {
         base.Start();
-        Debug.Log("Did we get here2?");
+        //Debug.Log("Did we get here2?");
         attackPrefab = Resources.Load<GameObject>("Attacks/Missile");
         //missile = Resources.Load<GameObject>("Attacks/Missile");
     }

@@ -117,7 +117,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.5
+  m_Radius: 0.2
 --- !u!114 &-7833202958423392091
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -148,10 +148,10 @@ MonoBehaviour:
   left: {fileID: 0}
   right: {fileID: 0}
   lr: 0
-  JANK_GAME_JAM_CONSTANT_DONT_CHANGE_COST: 30
-  JANK_GAME_JAM_CONSTANT_DONT_CHANGE_CO2_COST: 0.02
+  JANK_GAME_JAM_CONSTANT_DONT_CHANGE_COST: 35
+  JANK_GAME_JAM_CONSTANT_DONT_CHANGE_CO2_COST: 0.25
   type: 0
-  attackRate: 1
+  attackRate: 2
   range: 0.2
   damage: 1
   lm:

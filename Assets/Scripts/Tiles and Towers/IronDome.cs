@@ -23,7 +23,7 @@ public class IronDome : AttackTower
     {
 
         base.Update();
-        Debug.Log("Did we get here");
+        //Debug.Log("Did we get here");
         float wide = this.transform.localScale.x / 3f;
         line.SetWidth(wide, wide);
         lineDuration = 0.2f;

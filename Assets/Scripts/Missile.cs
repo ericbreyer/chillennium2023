@@ -62,7 +62,8 @@ public class Missile : PolarObject
         else if (Time.time - startFlyTime > maxFlyTime)
 
         {
-            explode();
+            //explode();
+            Destroy(this.gameObject);
         }
         else
         {
@@ -75,7 +76,7 @@ public class Missile : PolarObject
 
     void explode()
     {
-        Debug.Log("MISISEHI EXPLODING");
+        //Debug.Log("MISISEHI EXPLODING");
         Collider2D[] results = new Collider2D[25];
         int num = cc.OverlapCollider(cf, results);
         bool hit = false;
