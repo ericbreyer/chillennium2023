@@ -540,7 +540,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.018004417, g: 0, b: 0.3962264, a: 0}
+  m_BackGroundColor: {r: 0, g: 0, b: 0, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -834,14 +834,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1216894796, guid: a53837f129dc3a646ab0c8e7f104f912, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 35.950012
-      objectReference: {fileID: 0}
-    - target: {fileID: 1216894796, guid: a53837f129dc3a646ab0c8e7f104f912, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -26.75
-      objectReference: {fileID: 0}
     - target: {fileID: 57496654922729992, guid: a53837f129dc3a646ab0c8e7f104f912, type: 3}
       propertyPath: m_RootOrder
       value: 14
@@ -890,22 +882,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: DeathManager
       objectReference: {fileID: 0}
-    - target: {fileID: 8286550036577281553, guid: a53837f129dc3a646ab0c8e7f104f912, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 59
-      objectReference: {fileID: 0}
-    - target: {fileID: 8286550036577281553, guid: a53837f129dc3a646ab0c8e7f104f912, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -148
-      objectReference: {fileID: 0}
     - target: {fileID: 8286550037890225219, guid: a53837f129dc3a646ab0c8e7f104f912, type: 3}
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 1325028233}
-    - target: {fileID: 8286550037890225220, guid: a53837f129dc3a646ab0c8e7f104f912, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a53837f129dc3a646ab0c8e7f104f912, type: 3}
 --- !u!1001 &867724812838334926
@@ -976,21 +956,9 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 958759376282799135, guid: 4c09ef1dbcf1724429e046e3d8a99a4f, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 106.3
-      objectReference: {fileID: 0}
-    - target: {fileID: 958759376282799135, guid: 4c09ef1dbcf1724429e046e3d8a99a4f, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 6.1
-      objectReference: {fileID: 0}
     - target: {fileID: 958759376482852731, guid: 4c09ef1dbcf1724429e046e3d8a99a4f, type: 3}
       propertyPath: m_Name
       value: Canvas
-      objectReference: {fileID: 0}
-    - target: {fileID: 958759376482852731, guid: 4c09ef1dbcf1724429e046e3d8a99a4f, type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 958759376482852732, guid: 4c09ef1dbcf1724429e046e3d8a99a4f, type: 3}
       propertyPath: m_Camera
@@ -1079,46 +1047,6 @@ PrefabInstance:
     - target: {fileID: 958759376482852735, guid: 4c09ef1dbcf1724429e046e3d8a99a4f, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 958759377481851787, guid: 4c09ef1dbcf1724429e046e3d8a99a4f, type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 137.3
-      objectReference: {fileID: 0}
-    - target: {fileID: 958759377481851787, guid: 4c09ef1dbcf1724429e046e3d8a99a4f, type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 148
-      objectReference: {fileID: 0}
-    - target: {fileID: 958759377481851787, guid: 4c09ef1dbcf1724429e046e3d8a99a4f, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 296.3
-      objectReference: {fileID: 0}
-    - target: {fileID: 958759377481851787, guid: 4c09ef1dbcf1724429e046e3d8a99a4f, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 13.9
-      objectReference: {fileID: 0}
-    - target: {fileID: 958759377547557700, guid: 4c09ef1dbcf1724429e046e3d8a99a4f, type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 722.25
-      objectReference: {fileID: 0}
-    - target: {fileID: 958759377547557700, guid: 4c09ef1dbcf1724429e046e3d8a99a4f, type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 189.9
-      objectReference: {fileID: 0}
-    - target: {fileID: 958759377547557700, guid: 4c09ef1dbcf1724429e046e3d8a99a4f, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: -21.125
-      objectReference: {fileID: 0}
-    - target: {fileID: 958759377547557700, guid: 4c09ef1dbcf1724429e046e3d8a99a4f, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 82.8
-      objectReference: {fileID: 0}
-    - target: {fileID: 958759377547557703, guid: 4c09ef1dbcf1724429e046e3d8a99a4f, type: 3}
-      propertyPath: m_text
-      value: Planet of the 'Chokes
-      objectReference: {fileID: 0}
-    - target: {fileID: 958759377547557703, guid: 4c09ef1dbcf1724429e046e3d8a99a4f, type: 3}
-      propertyPath: m_fontSize
-      value: 66.05
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4c09ef1dbcf1724429e046e3d8a99a4f, type: 3}
