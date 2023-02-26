@@ -46,6 +46,7 @@ public class Missile : PolarObject
         if (Vector3.Distance(this.transform.position, goal) < triggerRadius)
         {
 
+            
             explode();
         }
         else if (cc.OverlapCollider(cf, results) >= 1)
@@ -55,12 +56,11 @@ public class Missile : PolarObject
         else if (Time.time - startFlyTime > maxFlyTime)
 
         {
-            Debug.Log("timeout");
             explode();
         }
         else
         {
-            Vector3 travel = (goal - this.transform.position) * Time.deltaTime;
+            Vector3 travel = (goal - this.transform.position).normalized * Time.deltaTime;
             //Debug.Log(travel);
             this.transform.position += travel;
         }
@@ -109,7 +109,7 @@ public class Missile : PolarObject
     public void setTarget(GameObject tar)
     {
         this.target = tar;
-        this.transform.Rotate(Vector3.forward, -tar.GetComponent<PolarObject>().theta - this.theta + 180);
+        //this.transform.Rotate(Vector3.forward, -tar.GetComponent<PolarObject>().theta - this.theta + 180);
 
     }
 
