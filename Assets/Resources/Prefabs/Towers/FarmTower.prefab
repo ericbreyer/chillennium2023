@@ -419,6 +419,7 @@ GameObject:
   - component: {fileID: 8424058357344482681}
   - component: {fileID: 2997432503435026661}
   - component: {fileID: 9083557038979530114}
+  - component: {fileID: 6580262791401712865}
   m_Layer: 0
   m_Name: FarmTower
   m_TagString: Untagged
@@ -470,7 +471,7 @@ MonoBehaviour:
   home: {fileID: 0}
   left: {fileID: 0}
   right: {fileID: 0}
-  depth: 0
+  height: 0
   lr: 0
   JANK_GAME_JAM_CONSTANT_DONT_CHANGE_COST: 10
   rate: 10
@@ -568,3 +569,19 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!58 &6580262791401712865
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8424058357344482682}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.5

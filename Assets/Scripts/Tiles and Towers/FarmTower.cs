@@ -11,6 +11,7 @@ public class FarmTower : Tower, IClickHandler
     [SerializeField] private Sprite growingSprite;
     [SerializeField] private Sprite grownSprite;
     [SerializeField] private GameObject hi;
+    public new int type = 1;
 
     private enum GrowStste {
         dead,
@@ -40,6 +41,7 @@ public class FarmTower : Tower, IClickHandler
     }
 
     public void DoClick() {
+        
         if (grown == GrowStste.grown) {
             grown = GrowStste.dead;
             bank.AddChokes(10);

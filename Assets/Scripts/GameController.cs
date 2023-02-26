@@ -27,6 +27,8 @@ public class GameController : MonoBehaviour
 
     //UI manager object
     private PlacementUIManager placeUIMan;
+    private GlobalWarmingManager globalWarmingManager;
+    private ArtichokeManager artichokeManager;
 
     //Planet
     private Planet planet;
@@ -38,13 +40,17 @@ public class GameController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        this.warmth = this.startingWarmth;
+        this.baseWarmth = this.startingWarmth;
         this.difficulty = this.startingDifficulty;
         this.enemyList = new Enemy[numEnemyPrefabs];
         this.chanceVals = new float[numEnemyPrefabs];
         this.ppf = Resources.Load<Planet>("Prefabs/Planet/Planet");
         placeUIMan = FindObjectOfType<PlacementUIManager>();
+        globalWarmingManager = FindObjectOfType<GlobalWarmingManager>();
+        artichokeManager = FindObjectOfType<ArtichokeManager>();
         placeUIMan.gameObject.SetActive(false);
+        globalWarmingManager.gameObject.SetActive(false);
+        artichokeManager.gameObject.SetActive(false);
 
         FindObjectOfType<AudioManager>().PlayMusic(0);
 
@@ -83,6 +89,8 @@ public class GameController : MonoBehaviour
                 this.planet = Instantiate(ppf);
                 
                 placeUIMan.gameObject.SetActive(true);
+                globalWarmingManager.gameObject.SetActive(true);
+                artichokeManager.gameObject.SetActive(true);
 
                 //Initializing game time values
                 this.gameStartTime = Time.time;
@@ -150,7 +158,7 @@ public class GameController : MonoBehaviour
 
     void warmthHandler()
     {
-        this.baseWarmth = this.difficulty;
+        this.baseWarmth += warmthIncPerSec;
         this.warmth = this.baseWarmth + this.artificialWarmth;
         if (warmth > 1)
         {
@@ -160,9 +168,10 @@ public class GameController : MonoBehaviour
         {
             warmth = 0;
         }
+        globalWarmingManager.SetGlobalWarming(warmth);
     }
 
-    void changeWarmth(float warm)
+    public void changeWarmth(float warm)
     {
         artificialWarmth += warm;
     }

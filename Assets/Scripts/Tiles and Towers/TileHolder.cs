@@ -11,7 +11,7 @@ public class TileHolder : PolarObject, IClickHandler
     public bool empty;
     public SpriteRenderer sprite;
     private PlacementUIManager puim;
-    //public int height;
+    
 
     public void attach(Tower offspring)
     {
@@ -32,12 +32,32 @@ public class TileHolder : PolarObject, IClickHandler
         sprite = GetComponent<SpriteRenderer>();
         puim = FindObjectOfType<PlacementUIManager>();
         Debug.Log(GetComponent<BoxCollider2D>().bounds.ToString());
-
+        sprite.enabled = false;
     }
 
     void Update() 
     {
-
+        if (puim.getSelectedTower() != null)
+        {
+            CircleCollider2D dummy = null;
+            if(puim.getSelectedTower().TryGetComponent<CircleCollider2D>(out dummy))
+            {
+                Debug.Log("Got here");
+                if (height == 0 && empty == true)
+                {
+                    sprite.enabled = true;
+                    Debug.Log("Got here 2");
+                }
+            }    
+            else
+            {
+                if(empty == true) sprite.enabled = true;
+            }
+        }
+        else
+        {
+            sprite.enabled = false;
+        }
     }
 
     public void DoClick()
@@ -49,6 +69,8 @@ public class TileHolder : PolarObject, IClickHandler
             var obj = Instantiate(sel);
             tower = obj.GetComponent<Tower>();
             tower.transform.localScale = this.transform.localScale;
+            tower.transform.localScale = this.transform.localScale * 3 / 2;
+            tower.transform.Rotate(new Vector3(0, 0, -90));
 
             tower.setPosPol(r, theta);
             //Debug.Log(theta);
@@ -59,15 +81,12 @@ public class TileHolder : PolarObject, IClickHandler
             gameObject.GetComponent<ParticleSystem>().Stop();
             empty = false;
             sprite.enabled = false;
-            
         }
-        
-
     }
 
     public void DoHoverEnter()
     {
-        if(empty) gameObject.GetComponent<ParticleSystem>().Play();
+        if(empty && sprite.enabled) gameObject.GetComponent<ParticleSystem>().Play();
     }
 
     public void DoHoverLeave()
@@ -75,5 +94,13 @@ public class TileHolder : PolarObject, IClickHandler
        if(empty) gameObject.GetComponent<ParticleSystem>().Stop();
     }
 
+    public void detach()
+    {
+        if(!empty)
+        {
+            empty = true;
+            tower.killChildren();
+        }
+    }
 
 }
