@@ -18,11 +18,6 @@ public class Tower : PolarObject
         home = basis;
     }
 
-    void Start()
-    {
-        
-    }
-
     public void createHolders()
     {
         GameObject[] toCheck = GameObject.FindGameObjectsWithTag("Shit");

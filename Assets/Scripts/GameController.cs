@@ -57,7 +57,7 @@ public class GameController : MonoBehaviour
         float chanceAccum = 0; //associating value rand needs to hit to spawn this enemy
         for(int i = 0; i<numEnemyPrefabs; i++)
         {
-            chanceAccum += enemyList[i].spawnChance;
+            chanceAccum += enemyList[i].GetComponent<Enemy>().spawnChance;
             this.chanceVals[i] = chanceAccum;
             
             Debug.Log("Chanceaccum:" + chanceAccum);
@@ -131,7 +131,7 @@ public class GameController : MonoBehaviour
                 {
                     Enemy newEnemy = Instantiate(enemyList[i]);
                     newEnemy.setPosPol(1f, Random.Range(0, 360));
-                    newEnemy.transform.Rotate(new Vector3(0, 0, 0));
+                    //newEnemy.transform.Rotate(new Vector3(0, 0, 0));
                     float sca = planet.radius / planet.numPlots * 3;
                     newEnemy.transform.localScale = newEnemy.transform.localScale * sca;
                     break;

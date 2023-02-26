@@ -67,7 +67,9 @@ PrefabInstance:
       propertyPath: m_Name
       value: MissileTower
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 8977993308377085613, guid: fc36542a4ffcec54e838c85bcd55dced, type: 3}
+    - {fileID: 6332340360194763978, guid: fc36542a4ffcec54e838c85bcd55dced, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: fc36542a4ffcec54e838c85bcd55dced, type: 3}
 --- !u!1 &8079529263981535758 stripped
 GameObject:

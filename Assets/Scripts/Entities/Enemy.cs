@@ -14,8 +14,9 @@ public class Enemy : Entity
     // Start is called before the first frame update
     public float spawnChance;
 
-    void Start()
+    protected override void Start()
     {
+        base.Start();
         this.lastAttackTime = Time.time;
         cc = this.GetComponent<CircleCollider2D>();
         cc.radius = this.range;

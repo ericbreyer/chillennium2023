@@ -8,8 +8,9 @@ public class BasicEnemy : Enemy
     private GameObject missile;
 
     // Start is called before the first frame update
-    void Start()
+    protected override void Start()
     {
+        base.Start();
         missile = Resources.Load<GameObject>("Prefabs/Missile");
         
     }
@@ -17,8 +18,8 @@ public class BasicEnemy : Enemy
     // Update is called once per frame
     void Update()
     {
-       //move down until reasonable distance from surface
-       if(this.r - FindObjectOfType<Planet>().radius > range * 0.85)
+        //move down until reasonable distance from surface
+       if(this.r - FindObjectOfType<Planet>().radius > this.range * 0.85)
         {
             this.setPosPol(this.r - this.speed * Time.deltaTime, this.theta);
         }

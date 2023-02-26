@@ -39,6 +39,21 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: Earth
+    uniqueID: 3945880709
+    locked: 0
+  - name: Tower
+    uniqueID: 2003431965
+    locked: 0
+  - name: Enemy
+    uniqueID: 3341148999
+    locked: 0
+  - name: Projectile
+    uniqueID: 1429487169
+    locked: 0
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: UI
+    uniqueID: 2813193757
     locked: 0

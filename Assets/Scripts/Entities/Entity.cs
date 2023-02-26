@@ -9,8 +9,9 @@ public class Entity : PolarObject
     public float damage;
     public float speed;
 
-    void Start()
+    protected override void Start()
     {
+        base.Start();
         this.lastAttackTime = Time.time;
     }
 

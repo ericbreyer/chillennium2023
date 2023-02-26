@@ -66,37 +66,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 5464589976339254782, guid: 920c9cfa13b4b724c9eea0d423ccfa1a, type: 3}
   m_PrefabInstance: {fileID: 2573779874015760956}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &6332340360194763978
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7521566123437776834}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: be7a99d433379004bb53c2b1612e7a29, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  x: 0
-  y: 0
-  theta: 0
-  r: 0
-  dir: 0
-  width: 0
-  height: 0
-  dirdif: 0
-  dirEq: 0
-  dirConst: 0
-  dirDynam: 0
-  dirFlex: 0
-  maxHealth: 0
-  home: {fileID: 0}
-  left: {fileID: 0}
-  right: {fileID: 0}
-  depth: 0
-  lr: 0
-  JANK_GAME_JAM_CONSTANT_DONT_CHANGE_COST: 0
 --- !u!212 &-8128251051410041735
 SpriteRenderer:
   m_ObjectHideFlags: 0

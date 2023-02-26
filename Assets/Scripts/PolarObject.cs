@@ -64,7 +64,9 @@ public class PolarObject : MonoBehaviour
 
     public bool setPosPol(float newR, float newTheta)
     {
-        r = newR;
+      
+        this.r = newR;
+        Debug.Log("R is being set to " + newR + " " + this.r);
         theta = newTheta;
         this.transform.position = new Vector2(0, 0);
         if (dirDynam)
@@ -95,9 +97,9 @@ public class PolarObject : MonoBehaviour
         return true;
     }
 
-    private void Start()
+    protected virtual void Start()
     {
-        
+        Debug.Log("We got here1");
         this.transform.Rotate(Vector3.forward, -90);
         height = 1f;
         width = 1f;

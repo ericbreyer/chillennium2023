@@ -23,8 +23,9 @@ public class TileHolder : PolarObject, IClickHandler
 
     }
 
-    void Start() 
+    protected override void Start() 
     {
+        base.Start();
         ps = gameObject.GetComponent<ParticleSystem>();
         gameObject.GetComponent<ParticleSystem>().Stop();
         empty = true;
@@ -48,7 +49,6 @@ public class TileHolder : PolarObject, IClickHandler
             var obj = Instantiate(sel);
             tower = obj.GetComponent<Tower>();
             tower.transform.localScale = this.transform.localScale;
-            tower.transform.Rotate(new Vector3(0, 0, -90));
 
             tower.setPosPol(r, theta);
             //Debug.Log(theta);
