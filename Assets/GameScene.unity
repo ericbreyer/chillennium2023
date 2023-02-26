@@ -903,8 +903,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startingWarmth: 0.1
   startingDifficulty: 0
-  diffIncPerSec: 0.002
-  warmthIncPerSec: 0.002
+  diffIncPerSec: 0.006
+  warmthIncPerSec: 0.01
   numEnemyPrefabs: 1
   startScreen: {fileID: 36741061}
   pauseCanvas: {fileID: 2097012626801884429}

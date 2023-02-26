@@ -103,7 +103,7 @@ public class GameController : MonoBehaviour
 
                 //Initializing game time values
                 this.gameStartTime = Time.time;
-                this.lastSpawnTime = this.gameStartTime;
+                this.lastSpawnTime = this.gameStartTime + 10;
             }
         }
         else
@@ -139,10 +139,7 @@ public class GameController : MonoBehaviour
         }
 
         if (this.difficulty > .5f) {
-            FindObjectOfType<AudioManager>().PlayMusic(1);
-        }
-        else {
-            FindObjectOfType<AudioManager>().PlayMusic(0);
+            if (!FindObjectOfType<AudioManager>().MusicSource.isPlaying) { FindObjectOfType<AudioManager>().PlayMusic(1); }
         }
     }
 
@@ -174,12 +171,19 @@ public class GameController : MonoBehaviour
     //this returns the delay in between enemy spawns given the difficulty
     float difficultyFunction(float d)
     {
-        return 20*(1-d)+3;
+        return Mathf.Max(5*Mathf.Exp(-d), 0.1f);
     }
 
     void warmthHandler()
     {
-        this.baseWarmth = difficulty;
+        if (this.baseWarmth > 1)
+        {
+            this.baseWarmth = 1;
+        }
+        else
+        {
+            this.baseWarmth = warmthIncPerSec * (Time.time - this.gameStartTime);
+        }
         this.warmth = this.baseWarmth + this.artificialWarmth;
         if (warmth > 1)
         {
