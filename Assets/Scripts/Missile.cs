@@ -57,6 +57,7 @@ public class Missile : PolarObject
         else if (Time.time - startFlyTime > maxFlyTime)
 
         {
+            Debug.Log("timeout");
             explode();
         }
         else
@@ -77,6 +78,7 @@ public class Missile : PolarObject
         {
             Planet p;
             Tower po;
+            BasicEnemy en;
             if(results[i].gameObject.TryGetComponent<Tower>(out po))
             {
                 //Debug.Log("hitting Tower");
@@ -91,6 +93,11 @@ public class Missile : PolarObject
             else if(results[i].gameObject.TryGetComponent<Planet>(out p))
             {
                 p.takeDamage(this.damage);
+                hit = true;
+            }
+            else if (results[i].gameObject.TryGetComponent<BasicEnemy>(out en))
+            {
+                en.takeDamage(this.damage);
                 hit = true;
             }
             if (hit) break;
