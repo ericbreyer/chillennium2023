@@ -45,7 +45,7 @@ public class FarmTower : Tower, IClickHandler
         transform.position = new Vector3(transform.position.x, transform.position.y, 100f);
 
         var rand = Random.value;
-        if (rand * 7500 < controller.getWarmth()) {
+        if (rand < 0.01 * controller.getWarmth() * Time.deltaTime) {
             StopAllCoroutines();
             sr.sprite = fireSprite;
             grown = GrowStste.fire;

@@ -24,6 +24,7 @@ public class AttackTower : Tower
         cc.isTrigger = true;
         cf = new ContactFilter2D();
         cf.SetLayerMask(lm);
+        cc.enabled = false;
         this.attackPrefab = Resources.Load<GameObject>("Prefabs/Missile");
         Debug.Log("Did we get here");
     }
