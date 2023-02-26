@@ -10,6 +10,7 @@ public class Tower : PolarObject
     public TileHolder right;
     public int lr;
     public int JANK_GAME_JAM_CONSTANT_DONT_CHANGE_COST;
+    public float JANK_GAME_JAM_CONSTANT_DONT_CHANGE_CO2_COST;
     public int type;
     
 

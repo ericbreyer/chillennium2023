@@ -101,10 +101,12 @@ MonoBehaviour:
   dirDynam: 0
   dirFlex: 0
   maxHealth: 0
+  height: 0
   home: {fileID: 0}
   left: {fileID: 0}
   right: {fileID: 0}
-  depth: 0
   lr: 0
   JANK_GAME_JAM_CONSTANT_DONT_CHANGE_COST: 100
+  JANK_GAME_JAM_CONSTANT_DONT_CHANGE_CO2_COST: 0.05
+  type: 0
   rate: 10

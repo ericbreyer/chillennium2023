@@ -29,6 +29,10 @@ public class GameController : MonoBehaviour
     private PlacementUIManager placeUIMan;
     private GlobalWarmingManager globalWarmingManager;
     private ArtichokeManager artichokeManager;
+    private ScoreManager scoreManager;
+    [SerializeField] private Canvas startScreen;
+    [SerializeField] private Canvas pauseCanvas;
+    private bool paused = false;
 
     //Planet
     private Planet planet;
@@ -48,9 +52,12 @@ public class GameController : MonoBehaviour
         placeUIMan = FindObjectOfType<PlacementUIManager>();
         globalWarmingManager = FindObjectOfType<GlobalWarmingManager>();
         artichokeManager = FindObjectOfType<ArtichokeManager>();
+        scoreManager = FindObjectOfType<ScoreManager>();
         placeUIMan.gameObject.SetActive(false);
         globalWarmingManager.gameObject.SetActive(false);
         artichokeManager.gameObject.SetActive(false);
+        scoreManager.gameObject.SetActive(false);
+        startScreen.gameObject.SetActive(true);
 
         FindObjectOfType<AudioManager>().PlayMusic(0);
 
@@ -91,6 +98,8 @@ public class GameController : MonoBehaviour
                 placeUIMan.gameObject.SetActive(true);
                 globalWarmingManager.gameObject.SetActive(true);
                 artichokeManager.gameObject.SetActive(true);
+                scoreManager.gameObject.SetActive(true);
+                startScreen.gameObject.SetActive(false);
 
                 //Initializing game time values
                 this.gameStartTime = Time.time;
@@ -102,6 +111,18 @@ public class GameController : MonoBehaviour
             difficultyHandler();
             spawnHandler();
             warmthHandler();
+        }
+
+        if(Input.GetKeyDown(KeyCode.Escape)) {
+            paused = !paused;
+        }
+        if(paused) {
+            pauseCanvas.gameObject.SetActive(true );
+            Time.timeScale = 0f;
+        }
+        else {
+            pauseCanvas.gameObject.SetActive(false );
+            Time.timeScale = 1f;
         }
         
     }
