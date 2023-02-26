@@ -39,9 +39,13 @@ public class Planet : MonoBehaviour
         }
     }
 
-    void takeDamage(float damage)
+    public void takeDamage(float damage)
     {
         this.health -= damage;
+        if(this.health <= 0)
+        {
+            //die
+        }
     }
 
     // Update is called once per frame

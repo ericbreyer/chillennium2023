@@ -17,20 +17,23 @@ public class Enemy : Entity
     protected override void Start()
     {
         base.Start();
-        this.lastAttackTime = Time.time;
         cc = this.GetComponent<CircleCollider2D>();
-        cc.radius = this.range;
+        cc.radius = this.range/this.transform.localScale.x;
         cc.isTrigger = true;
         cf = new ContactFilter2D();
         cf.SetLayerMask(lm);
     }
 
     // Update is called once per frame
-    void Update()
+    protected virtual void Update()
     {
-        if(Time.time - this.lastAttackTime > this.attackRate)
+        Debug.Log("UPDAITGN");
+        Debug.Log("TimeL " + Time.time + " " + this.attackRate);
+        if (Time.time - this.lastAttackTime > this.attackRate)
         {
+            Debug.Log("AIWUAFHAIUEWFBAIBFIABFDIAWBDAWIHSBD");
             attack();
+            this.lastAttackTime = Time.time;
         }
     }
 

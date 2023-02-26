@@ -7,6 +7,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -2364431104684579695, guid: 920c9cfa13b4b724c9eea0d423ccfa1a, type: 3}
+      propertyPath: maxHealth
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5464589976339254782, guid: 920c9cfa13b4b724c9eea0d423ccfa1a, type: 3}
       propertyPath: m_Name
       value: Tower

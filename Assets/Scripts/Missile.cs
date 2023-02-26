@@ -5,7 +5,7 @@ using UnityEngine;
 public class Missile : MonoBehaviour
 {
     // Start is called before the first frame update
-    private GameObject target;
+    public GameObject target;
     public float flySpeed;
     public float maxFlyTime;
     private float startFlyTime;
@@ -20,16 +20,31 @@ public class Missile : MonoBehaviour
     {
         this.cc = gameObject.GetComponent<CircleCollider2D>();
         this.startFlyTime = Time.time;
-        this.damage = 0;
+        cc = this.GetComponent<CircleCollider2D>();
+        cc.radius = 1;
+        cc.isTrigger = true;
+        cf = new ContactFilter2D();
+        cf.SetLayerMask(lm);
+        this.explosion = Resources.Load<GameObject>("Prefabs/Explosion");
     }
 
     // Update is called once per frame
     void Update()
     {
         Collider2D[] results = new Collider2D[1];
-        if(Vector3.Distance(this.transform.position, target.transform.position) < triggerRadius
-            || cc.OverlapCollider(cf, results) > 1
-            || Time.time - startFlyTime > maxFlyTime)
+        if (target == null)
+        {
+            explode();
+        }
+        else if (Vector3.Distance(this.transform.position, target.transform.position) < triggerRadius)
+        {
+            explode();
+        }
+        else if (cc.OverlapCollider(cf, results) >= 1)
+        {
+            explode();
+        }
+        else if (Time.time - startFlyTime > maxFlyTime)
         {
             explode();
         }
@@ -39,17 +54,27 @@ public class Missile : MonoBehaviour
             Vector3 travel = (target.transform.position - this.transform.position).normalized * flySpeed * Time.deltaTime;
             this.transform.position += travel;
         }
+        
     }
 
     void explode()
     {
         Collider2D[] results = new Collider2D[25];
         int num = cc.OverlapCollider(cf, results);
-        for(int i = 0; i<Mathf.Max(num, 25); i++)
+        for(int i = 0; i<Mathf.Min(num, 25); i++)
         {
-            results[i].gameObject.GetComponent<PolarObject>().takeDamage(this.damage);
+            Planet p;
+            PolarObject po;
+            if(results[i].gameObject.TryGetComponent<PolarObject>(out po))
+            {
+                po.takeDamage(this.damage);
+            }
+            else if(results[i].gameObject.TryGetComponent<Planet>(out p))
+            {
+                p.takeDamage(this.damage);
+            }
         }
-        Instantiate(explosion);
+        Instantiate(explosion, this.transform);
         Destroy(this.gameObject);
     }
 

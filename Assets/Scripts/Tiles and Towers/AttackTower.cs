@@ -18,7 +18,7 @@ public class AttackTower : Tower
     {
         lastAttackTime = Time.time;
         cc = this.GetComponent<CircleCollider2D>();
-        cc.radius = this.range;
+        cc.radius = this.range / this.transform.localScale.x;
         cc.isTrigger = true;
         cf = new ContactFilter2D();
         cf.SetLayerMask(lm);

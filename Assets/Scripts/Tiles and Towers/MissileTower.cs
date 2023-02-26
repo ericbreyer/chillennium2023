@@ -13,14 +13,15 @@ public class MissileTower : AttackTower
 
     override protected void attack()
     {
-        Collider2D[] results = new Collider2D[5];
+        Collider2D[] results = new Collider2D[1];
         this.cf.SetLayerMask(lm);
         if(cc.OverlapCollider(this.cf, results) > 0.5f)
         {
             Missile miss = Instantiate(this.attackPrefab).GetComponent<Missile>();
+            miss.transform.localScale = results[0].transform.localScale;
             lastAttackTime = Time.time;
             miss.setLM(this.lm);
-            miss.setTarget(results[1].gameObject);
+            miss.setTarget(results[0].gameObject);
             miss.setDamage(this.damage);
         }
     }
