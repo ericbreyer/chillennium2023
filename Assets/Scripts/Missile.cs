@@ -21,7 +21,7 @@ public class Missile : PolarObject
         base.Start();
         this.cc = gameObject.GetComponent<CircleCollider2D>();
         this.startFlyTime = Time.time;
-        cc = this.GetComponent<CircleCollider2D>();
+        //cc = this.GetComponent<CircleCollider2D>();
         cc.radius = 0.3f;
         cc.isTrigger = true;
         cf = new ContactFilter2D();
@@ -51,7 +51,7 @@ public class Missile : PolarObject
             explode();
         }
         else if (cc.OverlapCollider(cf, results) >= 1)
-        {
+        {   
             explode();
         }
         else if (Time.time - startFlyTime > maxFlyTime)
@@ -75,9 +75,12 @@ public class Missile : PolarObject
         for(int i = 0; i<Mathf.Min(num, 25); i++)
         {
             Planet p;
-            PolarObject po;
-            if(results[i].gameObject.TryGetComponent<PolarObject>(out po))
+            Tower po;
+            if(results[i].gameObject.TryGetComponent<Tower>(out po))
             {
+                Debug.Log("hitting Tower");
+                Debug.Log(po.transform.position);
+                Debug.Log(Vector3.Distance(cc.transform.position, po.transform.position));
                 po.takeDamage(this.damage);
             }
             else if(results[i].gameObject.TryGetComponent<Planet>(out p))
